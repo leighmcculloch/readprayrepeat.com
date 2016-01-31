@@ -1,0 +1,75 @@
+{{define "page"}}day{{end}}
+
+{{define "title"}}Day {{.DayNumber}}{{end}}
+
+{{define "copyright"}}
+  {{.ReadingBiblePassage.Copyright | UnsafeHTML}}
+{{end}}
+
+{{define "head"}}
+  <script src="javascript/day.js" async="async"></script>
+{{end}}
+
+{{define "tail"}}
+  {{.ReadingBiblePassage.TrackingCode | UnsafeHTML}}
+  {{.PrayerBiblePassage.TrackingCode | UnsafeHTML}}
+{{end}}
+
+{{define "content"}}
+  <table class="nav">
+    <tr>
+      <td class="nav-item nav-previous">
+        {{with .DayPrevious}}<a href="{{.}}"><i class="icon-left-circled"></i> Day {{.}}</a>{{end}}
+      </td>
+      <td class="nav-item nav-current">
+        Day {{.DayNumber}}
+      </td>
+      <td class="nav-item nav-next">
+        {{with .DayNext}}<a href="{{.}}">Day {{.}} <i class="icon-right-circled"></i></a>{{end}}
+      </td>
+    </tr>
+  </table>
+  <div class="nav-current-info">
+    <div class="nav-current-date">
+      <script>
+        var now = new Date();
+        var start = new Date(now.getFullYear(), 0, 0);
+        var oneDay = 1000 * 60 * 60 * 24;
+        var daysInTime = oneDay * {{.DayNumber}};
+        var date = new Date(start.getTime() + daysInTime);
+        document.write(date.toDateString());
+      </script>
+    </div>
+    <div class="passages">
+      <a href="#reading">Read {{.ReadingReference}}</a>
+      &amp;
+      <a href="#prayer">Pray {{.PrayerReference}}</a>
+    </div>
+  </div>
+  {{with .WatchYoutubeId}}
+  <div class="watch">
+    <iframe allowfullscreen src="https://www.youtube.com/embed/{{.}}?rel=0&showinfo=0"></iframe>
+  </div>
+  {{end}}
+  <div id="reading">
+    <h2>Read {{.ReadingReference}}</h2>
+    <div class="text">{{.ReadingBiblePassage.Html | UnsafeHTML}}</div>
+  </div>
+  <div id="prayer">
+    <h2>Pray {{.PrayerReference}}</h2>
+    <div class="text">{{.PrayerBiblePassage.Html | UnsafeHTML}}</div>
+  </div>
+  <table class="nav">
+    <tr>
+      <td class="nav-item nav-previous">
+        {{with .DayPrevious}}<a href="{{.}}"><i class="icon-left-circled"></i> Day {{.}}</a>{{end}}
+      </td>
+      <td class="nav-item nav-verses">
+        <a class="text-controls-verses">Verses</a>
+      </td>
+      <td class="nav-item nav-next">
+        {{with .DayNext}}<a href="{{.}}">Day {{.}} <i class="icon-right-circled"></i></a>{{end}}
+      </td>
+    </tr>
+  </table>
+{{end}}

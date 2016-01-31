@@ -1,0 +1,101 @@
+.page.day .view {
+  .nav {
+    font-size: 2em;
+    margin: $margin-standard 0;
+    width: 100%;
+    .nav-item {
+      font-weight: 600;
+      color: $color-text;
+      width: 33.33%;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .nav-previous,
+    .nav-verses,
+    .nav-next {
+      font-size: 0.5em;
+    }
+  }
+
+  .nav-current-info {
+    color: $color-unimportant;
+    .passages {
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  a.text-controls-verses {
+    font-weight: normal;
+    color: $color-unimportant;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .watch {
+    iframe {
+      margin: $margin-standard 0 0 0;
+      $video-width: 580px;
+      $video-width-min: 200px;
+      $video-height: 326px;
+      width: $video-width;
+      height: $video-height;
+      @for $width from $video-width through $video-width-min {
+        @media (max-width: $width) {
+          width:$width;
+          height:$width/$video-width*$video-height;
+        }
+      }
+    }
+  }
+
+  h2 {
+    margin: $margin-standard*2 0 $margin-standard 0;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: $color-text;
+  }
+
+  .text {
+    margin: $margin-standard;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    line-height: 1.95em;
+    font-weight: normal;
+    color: $color-text;
+    text-align: justify;
+    @media (min-width: $width-compact) {
+      text-align: center;
+    }
+
+    p {
+      &.p {
+        margin: 1.25em 0;
+      }
+      &.pi {
+        margin: 0 1em;
+      }
+      &.q, &.q1 {
+        text-indent: 1em;
+      }
+      &.q2, &.q3 {
+        text-indent: 2em;
+      }
+    }
+    .d, .s, .s1, .s2, .v, .r, .mr, .ms1 {
+      display: none;
+    }
+    &.show-verses {
+      .v {
+        display: inline;
+        font-weight: 300;
+        font-size: smaller;
+        color: $color-verses;
+      }
+    }
+  }
+}
+

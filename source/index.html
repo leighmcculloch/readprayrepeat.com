@@ -1,0 +1,18 @@
+{{define "page"}}index{{end}}
+
+{{define "title"}}Start now{{end}}
+
+{{define "content"}}
+  <div class="today">
+    <script>
+      var now = new Date();
+      var start = new Date(now.getFullYear(), 0, 0);
+      var diff = now - start;
+      var oneDay = 1000 * 60 * 60 * 24;
+      var day = Math.floor(diff / oneDay);
+      document.write('<a href="' + day + '">Today is day ' + day + ', start&nbsp;reading.<i class="icon-right-circled"></i></a>');
+    </script>
+  </div>
+
+  <iframe allowfullscreen src="https://www.youtube.com/embed/7hUs4TXRuVk?rel=0&showinfo=0"></iframe>
+{{end}}

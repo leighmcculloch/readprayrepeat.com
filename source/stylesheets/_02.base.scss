@@ -1,0 +1,62 @@
+$font-primary: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$font-text: 'Sumana', serif;
+
+$color-text: #1b1b1b;
+$color-unimportant: #a9a9a9;
+$color-verses: #a9a9a9;
+$color-footer: #a9a9a9;
+
+$width-mobile: 320px;
+$width-compact: 580px;
+$width-max: 580px;
+
+$margin-standard: 20px;
+
+body {
+  font-family: $font-primary;
+  font-size: 1em;
+  font-weight: 400;
+
+  /* disable auto scaling of text */
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.view {
+  margin: 0 auto;
+  max-width: $width-max;
+  text-align: center;
+
+  h1 {
+    margin: $margin-standard 0;
+    font-size: 1em;
+    font-weight: 600;
+    color: $color-text;
+  }
+}
+
+.footer {
+  max-width: $width-max;
+  margin: $margin-standard;
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1.2em;
+  color: $color-footer;
+  text-align: center;
+  div {
+    margin: 1em 0;
+  }
+  .about {
+    font-size:0.9em;
+  }
+  a {
+    color: $color-footer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

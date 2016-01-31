@@ -1,0 +1,50 @@
+{{define "base"}}<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1">
+    <title>Read, Pray, Repeat - {{template "title" .}}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400">
+    <link rel="stylesheet" href="stylesheets/all.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    {{template "head" .}}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1756782-60', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body class="page {{template "page" .}}">
+    <div class="view">
+      <div class="header">
+        <h1><a href="./"><i class="icon-book-open"></i>Read, Pray, Repeat</a></h1>
+      </div>
+      <div class="content">
+        {{template "content" .}}
+      </div>
+      <div class="footer">
+        <div class="copyright">{{template "copyright" .}}</div>
+        <div class="about">
+          The reading plan and videos were created by <a href="http://thebibleproject.tumblr.com/readscripture">The Bible Project</a>.
+          <br/>
+          This website is not associated with <a href="http://thebibleproject.tumblr.com/readscripture">The Bible Project</a>.
+        </div>
+        <div class="about">
+          Why: I created this website to fulfill my own need to access the reading plan that my <a href="http://realitysf.com">church family</a> is using in 2016 for the <a href="http://bible.realitysf.com">Year of Biblical Literacy</a>. I needed the readings in plain text using an easy-to-read-aloud translation - void of ads, distractions, or verse numbers. I needed to open a single page at the beginning of my day and read, without interruption. This format is helping me stay focused and read the Bible.
+        </div>
+        <div class="about">
+          <a href="https://github.com/leighmcculloch/readprayrepeat.com/issues/new">Feedback welcome</a>.
+        </div>
+      </div>
+    </div>
+    {{template "tail" .}}
+  </body>
+</html>
+{{end}}
+{{define "head"}}{{end}}
+{{define "tail"}}{{end}}
+{{define "copyright"}}{{end}}

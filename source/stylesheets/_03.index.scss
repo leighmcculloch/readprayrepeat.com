@@ -1,0 +1,25 @@
+.page.index .view {
+  text-align: center;
+
+  .today {
+    margin: $margin-standard auto;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: $color-text;
+  }
+
+  iframe {
+    $video-width: 580px;
+    $video-width-min: 200px;
+    $video-height: 326px;
+    width: $video-width;
+    height: $video-height;
+    @for $width from $video-width through $video-width-min {
+      @media (max-width: $width) {
+        width:$width;
+        height:$width/$video-width*$video-height;
+      }
+    }
+  }
+}
+
