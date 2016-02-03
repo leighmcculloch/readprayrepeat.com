@@ -8,6 +8,7 @@
 
 {{define "head"}}
   <script src="javascript/day.js" async="async"></script>
+  <meta name="readprayrepeat:day" content="{{.DayNumber}}">
 {{end}}
 
 {{define "tail"}}
@@ -30,16 +31,7 @@
     </tr>
   </table>
   <div class="nav-current-info">
-    <div class="nav-current-date">
-      <script>
-        var now = new Date();
-        var start = new Date(now.getFullYear(), 0, 0);
-        var oneDay = 1000 * 60 * 60 * 24;
-        var daysInTime = oneDay * {{.DayNumber}};
-        var date = new Date(start.getTime() + daysInTime);
-        document.write(date.toDateString());
-      </script>
-    </div>
+    <div class="nav-current-date"></div>
     <div class="passages">
       <a href="#reading">Read {{.ReadingReference}}</a>
       &amp;
