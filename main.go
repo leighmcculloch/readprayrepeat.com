@@ -12,11 +12,12 @@ import (
 func main() {
 	s := NewStatic()
 
+	days := loadDays()
+
 	s.Handle("/index.html", func(path string) (interface{}, []string) {
-		return nil, []string{"base.html", "index.html"}
+		return days, []string{"base.html", "index.html"}
 	})
 
-	days := loadDays()
 	for i := range days {
 		d := days[i]
 		p := fmt.Sprintf("/%d.html", d.DayNumber)
