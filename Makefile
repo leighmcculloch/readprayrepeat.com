@@ -35,5 +35,5 @@ push:
 	git checkout -
 
 setup:
-	# wellington is used for sass building
-	brew install wellington
+	brew update
+	brew install wellington # wellington is used for sass building
