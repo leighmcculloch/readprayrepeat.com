@@ -17,9 +17,8 @@ sass:
 	cd source; wt compile -b ../build stylesheets/all.scss
 
 static:
-	mkdir build
-	mkdir build/font
-	mkdir build/javascript
+	mkdir -p build/font
+	mkdir -p build/javascript
 	cp source/CNAME build/CNAME
 	cp source/favicon.png build/favicon.png
 	cp -r source/font/* build/font/
