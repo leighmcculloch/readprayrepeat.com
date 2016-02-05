@@ -16,16 +16,16 @@ func main() {
 
 	days := loadDays()
 
-	s.Handle("/index.html", func(path string) (interface{}, []string) {
-		return days, []string{"base.html", "index.html"}
+	s.Handle("/index.html", func(path string) (interface{}, []string, string) {
+		return days, []string{"base.html", "index.html"}, "entry"
 	})
 
 	for i := range days {
 		d := days[i]
 		p := fmt.Sprintf("/%d.html", d.DayNumber)
-		s.Handle(p, func(path string) (interface{}, []string) {
+		s.Handle(p, func(path string) (interface{}, []string, string) {
 			d.LoadPassages()
-			return d, []string{"base.html", "day.html"}
+			return d, []string{"base.html", "day.html"}, "entry"
 		})
 	}
 
