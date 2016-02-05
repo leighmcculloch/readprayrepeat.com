@@ -7,10 +7,12 @@ import (
 	"log"
 	"os"
 	"strings"
+
+	"github.com/leighmcculloch/static"
 )
 
 func main() {
-	s := NewStatic()
+	s := static.NewStatic()
 
 	days := loadDays()
 
