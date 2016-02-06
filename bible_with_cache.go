@@ -4,19 +4,20 @@ import (
 	"crypto/sha1"
 	"encoding/gob"
 	"fmt"
+	"io"
 	"os"
 )
 
 const cacheFolder = "cache"
 
-func GetBiblePassageWithCache(reference string) (*BiblePassage, error) {
-	bp, err := loadBiblePassage(reference)
+func GetBiblePassageWithCache(bible Bible, reference string) (*BiblePassage, error) {
+	bp, err := loadBiblePassage(bible, reference)
 	if err != nil {
-		bp, err = GetBiblePassage(reference)
+		bp, err = bible.GetPassage(reference)
 		if err != nil {
 			return nil, err
 		}
-		err = saveBiblePassage(reference, bp)
+		err = saveBiblePassage(bible, reference, bp)
 		if err != nil {
 			return nil, err
 		}
@@ -25,8 +26,8 @@ func GetBiblePassageWithCache(reference string) (*BiblePassage, error) {
 	return bp, nil
 }
 
-func loadBiblePassage(reference string) (*BiblePassage, error) {
-	f, err := os.Open(getCacheFilePath(reference))
+func loadBiblePassage(bible Bible, reference string) (*BiblePassage, error) {
+	f, err := os.Open(getCacheFilePath(bible, reference))
 	if err != nil {
 		return nil, err
 	}
@@ -42,8 +43,8 @@ func loadBiblePassage(reference string) (*BiblePassage, error) {
 	return &bp, nil
 }
 
-func saveBiblePassage(reference string, biblePassage *BiblePassage) error {
-	f, err := os.Create(getCacheFilePath(reference))
+func saveBiblePassage(bible Bible, reference string, biblePassage *BiblePassage) error {
+	f, err := os.Create(getCacheFilePath(bible, reference))
 	if err != nil {
 		return err
 	}
@@ -58,7 +59,11 @@ func saveBiblePassage(reference string, biblePassage *BiblePassage) error {
 	return nil
 }
 
-func getCacheFilePath(reference string) string {
-	hash := sha1.Sum([]byte(reference))
+func getCacheFilePath(bible Bible, reference string) string {
+	hasher := sha1.New()
+	io.WriteString(hasher, bible.Source())
+	io.WriteString(hasher, bible.NameAbbr())
+	io.WriteString(hasher, reference)
+	hash := hasher.Sum(nil)
 	return fmt.Sprintf("%s/%0x", cacheFolder, hash)
 }

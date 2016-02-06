@@ -12,25 +12,50 @@ import (
 
 var bibleApiKey = os.Getenv("API_KEY_BIBLESORG")
 
-const bibleVersion = "eng-CEVD" // 2006 Contemporary English Version, Second Edition (US Version)
-
-var bibleApiUrl = url.URL{
-	Scheme: "https",
-	Host:   "bibles.org",
-	Path:   fmt.Sprintf("/v2/%s/passages.js", bibleVersion),
+type translation struct {
+	ID       string
+	Name     string
+	NameAbbr string
 }
 
-type BiblePassage struct {
-	Html         string
-	TrackingCode string
-	Copyright    string
+var (
+	CEV = "CEV"
+)
+
+var translations = map[string]translation{
+	"CEV": translation{ID: "eng-CEVD", NameAbbr: "CEV", Name: "2006 Contemporary English Version, Second Edition (US Version)"},
 }
 
-func GetBiblePassage(reference string) (*BiblePassage, error) {
-	u := bibleApiUrl
+type BibleBiblesOrg struct {
+	translation
+}
+
+func NewBiblesOrg(translation string) BibleBiblesOrg {
+	return BibleBiblesOrg{translation: translations[translation]}
+}
+
+func (b BibleBiblesOrg) Source() string {
+	return "bibles.org"
+}
+
+func (b BibleBiblesOrg) NameAbbr() string {
+	return b.translation.NameAbbr
+}
+
+func (b BibleBiblesOrg) Name() string {
+	return b.translation.Name
+}
+
+func (b BibleBiblesOrg) GetPassage(reference string) (*BiblePassage, error) {
 	q := url.Values{}
 	q.Add("q[]", reference)
-	u.RawQuery = q.Encode()
+
+	u := url.URL{
+		Scheme:   "https",
+		Host:     "bibles.org",
+		Path:     fmt.Sprintf("/v2/%s/passages.js", b.translation.ID),
+		RawQuery: q.Encode(),
+	}
 
 	client := &http.Client{}
 	req, _ := http.NewRequest("GET", u.String(), nil)

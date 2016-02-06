@@ -38,15 +38,15 @@ func NewDay(dayNumber, dayCount int, readingReference, prayerReference, watchYou
 	return &day
 }
 
-func (d *Day) LoadPassages() error {
+func (d *Day) LoadPassages(bible Bible) error {
 	var err error
 
-	d.ReadingBiblePassage, err = GetBiblePassageWithCache(d.ReadingReference)
+	d.ReadingBiblePassage, err = GetBiblePassageWithCache(bible, d.ReadingReference)
 	if err != nil {
 		return err
 	}
 
-	d.PrayerBiblePassage, err = GetBiblePassageWithCache(d.PrayerReference)
+	d.PrayerBiblePassage, err = GetBiblePassageWithCache(bible, d.PrayerReference)
 	if err != nil {
 		return err
 	}

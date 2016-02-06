@@ -20,16 +20,26 @@ func main() {
 		return days, []string{"base.html", "index.html"}, "entry"
 	})
 
-	for i := range days {
-		d := days[i]
-		p := fmt.Sprintf("/%d.html", d.DayNumber)
-		s.Handle(p, func(path string) (interface{}, []string, string) {
-			err := d.LoadPassages()
-			if err != nil {
-				log.Fatal(err)
+	bibles := []Bible{NewBiblesOrg(CEV)}
+
+	for b, bible := range bibles {
+		for _, day := range days {
+			d := day
+
+			var path string
+			if b == 0 {
+				path = fmt.Sprintf("/%d.html", d.DayNumber)
+			} else {
+				path = fmt.Sprintf("/%s/%d.html", bible.NameAbbr(), d.DayNumber)
 			}
-			return d, []string{"base.html", "day.html"}, "entry"
-		})
+			s.Handle(path, func(path string) (interface{}, []string, string) {
+				err := d.LoadPassages(bible)
+				if err != nil {
+					log.Fatal(err)
+				}
+				return d, []string{"base.html", "day.html"}, "entry"
+			})
+		}
 	}
 
 	s.Run()
