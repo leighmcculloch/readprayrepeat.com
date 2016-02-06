@@ -1,4 +1,6 @@
 run: clean static sass run-go
+	
+debug: clean static sass debug-go
 
 build: clean static sass build-go
 
@@ -11,6 +13,9 @@ build-go:
 
 run-go:
 	go run *.go server
+
+debug-go:
+	godebug run *.go server
 
 sass:
 	mkdir -p build/stylesheets
