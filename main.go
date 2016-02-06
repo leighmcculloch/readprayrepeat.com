@@ -24,7 +24,10 @@ func main() {
 		d := days[i]
 		p := fmt.Sprintf("/%d.html", d.DayNumber)
 		s.Handle(p, func(path string) (interface{}, []string, string) {
-			d.LoadPassages()
+			err := d.LoadPassages()
+			if err != nil {
+				log.Fatal(err)
+			}
 			return d, []string{"base.html", "day.html"}, "entry"
 		})
 	}
