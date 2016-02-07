@@ -1,66 +1,66 @@
 {{define "page"}}day{{end}}
 
-{{define "title"}}Day {{.DayNumber}}{{end}}
+{{define "title"}}Day {{.Day.DayNumber}}{{end}}
 
 {{define "copyright"}}
-  {{.ReadingBiblePassage.Copyright | UnsafeHTML}}
+  {{.Day.ReadingBiblePassage.Copyright | UnsafeHTML}}
 {{end}}
 
 {{define "head"}}
   <script src="javascript/day.js" async="async"></script>
-  <meta name="readprayrepeat:day" content="{{.DayNumber}}">
+  <meta name="readprayrepeat:day" content="{{.Day.DayNumber}}">
 {{end}}
 
 {{define "tail"}}
-  {{.ReadingBiblePassage.TrackingCode | UnsafeHTML}}
-  {{.PrayerBiblePassage.TrackingCode | UnsafeHTML}}
+  {{.Day.ReadingBiblePassage.TrackingCode | UnsafeHTML}}
+  {{.Day.PrayerBiblePassage.TrackingCode | UnsafeHTML}}
 {{end}}
 
 {{define "content"}}
   <table class="nav">
     <tr>
       <td class="nav-item nav-previous">
-        {{with .DayPrevious}}<a href="{{.}}"><i class="icon-left-circled"></i> Day {{.}}</a>{{end}}
+        {{with .PreviousPage}}<a href="{{.Path}}"><i class="icon-left-circled"></i> Day {{.Day.DayNumber}}</a>{{end}}
       </td>
       <td class="nav-item nav-current">
-        Day {{.DayNumber}}
+        Day {{.Day.DayNumber}}
       </td>
       <td class="nav-item nav-next">
-        {{with .DayNext}}<a href="{{.}}">Day {{.}} <i class="icon-right-circled"></i></a>{{end}}
+        {{with .NextPage}}<a href="{{.Path}}">Day {{.Day.DayNumber}} <i class="icon-right-circled"></i></a>{{end}}
       </td>
     </tr>
   </table>
   <div class="nav-current-info">
     <div class="nav-current-date">&nbsp;</div>
     <div class="passages">
-      <a href="#reading">Read {{.ReadingReference}}</a>
+      <a href="#reading">Read {{.Day.ReadingReference}}</a>
       &amp;
-      <a href="#prayer">Pray {{.PrayerReference}}</a>
+      <a href="#prayer">Pray {{.Day.PrayerReference}}</a>
     </div>
   </div>
-  {{with .WatchYoutubeId}}
+  {{with .Day.WatchYoutubeId}}
   <div class="watch">
     <iframe allowfullscreen src="https://www.youtube.com/embed/{{.}}?rel=0&showinfo=0"></iframe>
   </div>
   {{end}}
   <div id="reading">
-    <h2>Read {{.ReadingReference}}</h2>
-    <div class="text">{{.ReadingBiblePassage.Html | UnsafeHTML}}</div>
+    <h2>Read {{.Day.ReadingReference}}</h2>
+    <div class="text {{.Bible.Source}}">{{.Day.ReadingBiblePassage.Html | UnsafeHTML}}</div>
   </div>
   <div id="prayer">
-    <h2>Pray {{.PrayerReference}}</h2>
-    <div class="text">{{.PrayerBiblePassage.Html | UnsafeHTML}}</div>
+    <h2>Pray {{.Day.PrayerReference}}</h2>
+    <div class="text {{.Bible.Source}}">{{.Day.PrayerBiblePassage.Html | UnsafeHTML}}</div>
   </div>
   <table class="nav">
     <tr>
       <td class="nav-item nav-previous">
-        {{with .DayPrevious}}<a href="{{.}}"><i class="icon-left-circled"></i> Day {{.}}</a>{{end}}
+        {{with .PreviousPage}}<a href="{{.Path}}"><i class="icon-left-circled"></i> Day {{.Day.DayNumber}}</a>{{end}}
       </td>
       <td class="nav-item nav-verses">
         <a class="text-controls-verses">Verses</a>
       </td>
       <td class="nav-item nav-next">
-        {{with .DayNext}}<a href="{{.}}">Day {{.}} <i class="icon-right-circled"></i></a>{{end}}
+        {{with .NextPage}}<a href="{{.Path}}">Day {{.Day.DayNumber}} <i class="icon-right-circled"></i></a>{{end}}
       </td>
     </tr>
   </table>

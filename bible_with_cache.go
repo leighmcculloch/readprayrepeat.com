@@ -62,7 +62,7 @@ func saveBiblePassage(bible Bible, reference string, biblePassage *BiblePassage)
 func getCacheFilePath(bible Bible, reference string) string {
 	hasher := sha1.New()
 	io.WriteString(hasher, bible.Source())
-	io.WriteString(hasher, bible.NameAbbr())
+	io.WriteString(hasher, bible.NameShort())
 	io.WriteString(hasher, reference)
 	hash := hasher.Sum(nil)
 	return fmt.Sprintf("%s/%0x", cacheFolder, hash)

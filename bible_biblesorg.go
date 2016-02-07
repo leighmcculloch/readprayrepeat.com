@@ -13,17 +13,19 @@ import (
 var bibleApiKey = os.Getenv("API_KEY_BIBLESORG")
 
 type translation struct {
-	ID       string
-	Name     string
-	NameAbbr string
+	ID        string
+	Name      string
+	NameShort string
 }
 
 var (
 	CEV = "CEV"
+	GNT = "GNT"
 )
 
 var translations = map[string]translation{
-	"CEV": translation{ID: "eng-CEVD", NameAbbr: "CEV", Name: "2006 Contemporary English Version, Second Edition (US Version)"},
+	CEV: translation{ID: "eng-CEVD", NameShort: "CEV", Name: "2006 Contemporary English Version, Second Edition (US Version)"},
+	GNT: translation{ID: "eng-GNTD", NameShort: "GNT", Name: "1992 Good News Translation, Second Edition (US Version)"},
 }
 
 type BibleBiblesOrg struct {
@@ -35,11 +37,11 @@ func NewBiblesOrg(translation string) BibleBiblesOrg {
 }
 
 func (b BibleBiblesOrg) Source() string {
-	return "bibles.org"
+	return "biblesorg"
 }
 
-func (b BibleBiblesOrg) NameAbbr() string {
-	return b.translation.NameAbbr
+func (b BibleBiblesOrg) NameShort() string {
+	return b.translation.NameShort
 }
 
 func (b BibleBiblesOrg) Name() string {

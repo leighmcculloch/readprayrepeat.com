@@ -20,32 +20,51 @@ func main() {
 		return days, []string{"base.html", "index.html"}, "entry"
 	})
 
-	bibles := []Bible{NewBiblesOrg(CEV)}
+	bibles := []Bible{
+		NewBiblesOrg(CEV),
+		NewBiblesOrg(GNT),
+		NewESVAPI(),
+	}
 
-	for b, bible := range bibles {
+	numberPages := len(bibles) * len(days)
+	pages := make([]pageDay, 0, numberPages)
+	for _, bible := range bibles {
+		var previousPage *pageDay
 		for _, day := range days {
-			d := day
-
-			var path string
-			if b == 0 {
-				path = fmt.Sprintf("/%d.html", d.DayNumber)
-			} else {
-				path = fmt.Sprintf("/%s/%d.html", bible.NameAbbr(), d.DayNumber)
+			page := pageDay{
+				PreviousPage: previousPage,
+				Day:          day,
+				Bible:        bible,
+				Bibles:       bibles,
 			}
-			s.Handle(path, func(path string) (interface{}, []string, string) {
-				err := d.LoadPassages(bible)
-				if err != nil {
-					log.Fatal(err)
-				}
-				return d, []string{"base.html", "day.html"}, "entry"
-			})
+
+			pages = append(pages, page)
+
+			if previousPage != nil {
+				previousPage.NextPage = &page
+			}
+			previousPage = &pages[len(pages)-1]
 		}
+	}
+
+	for i := range pages {
+		page := pages[i]
+
+		path := fmt.Sprintf("%s.html", page.Path())
+		log.Printf("Registering handler for %s", path)
+		s.Handle(path, func(path string) (interface{}, []string, string) {
+			err := page.LoadPassages()
+			if err != nil {
+				log.Fatal(err)
+			}
+			return page, []string{"base.html", "day.html"}, "entry"
+		})
 	}
 
 	s.Run()
 }
 
-func loadDays() []*Day {
+func loadDays() []Day {
 	csvFile, err := os.Open("data/data.csv")
 	if err != nil {
 		log.Fatal(err)
@@ -65,7 +84,7 @@ func loadDays() []*Day {
 	}
 
 	daysCount := len(records)
-	days := make([]*Day, daysCount)
+	days := make([]Day, daysCount)
 
 	for i := 0; i < len(records); i++ {
 		record := records[i]
@@ -75,7 +94,12 @@ func loadDays() []*Day {
 		prayerReference := record[1]
 		watchYoutubeId := record[2]
 
-		days[i] = NewDay(dayNumber, daysCount, readingReference, prayerReference, watchYoutubeId)
+		days[i] = Day{
+			DayNumber:        dayNumber,
+			ReadingReference: readingReference,
+			PrayerReference:  prayerReference,
+			WatchYoutubeId:   watchYoutubeId,
+		}
 	}
 
 	return days

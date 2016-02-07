@@ -71,29 +71,56 @@
       text-align: center;
     }
 
-    p {
-      &.p {
-        margin: 1.25em 0;
+    /* source: biblesorg */
+    &.biblesorg {
+      p {
+        &.p {
+          margin: 1.25em 0;
+        }
+        &.pi {
+          margin: 0 1em;
+        }
+        &.q, &.q1 {
+          text-indent: 1em;
+        }
+        &.q2, &.q3 {
+          text-indent: 2em;
+        }
       }
-      &.pi {
-        margin: 0 1em;
+      .d, .s, .s1, .s2, .v, .r, .mr, .ms1 {
+        display: none;
       }
-      &.q, &.q1 {
-        text-indent: 1em;
-      }
-      &.q2, &.q3 {
-        text-indent: 2em;
+      &.show-verses {
+        .v {
+          display: inline;
+          font-weight: 300;
+          font-size: smaller;
+          color: $color-verses;
+        }
       }
     }
-    .d, .s, .s1, .s2, .v, .r, .mr, .ms1 {
-      display: none;
-    }
-    &.show-verses {
-      .v {
-        display: inline;
-        font-weight: 300;
-        font-size: smaller;
-        color: $color-verses;
+
+    /* source: esvapi */
+    &.esvapi {
+      h2 {
+        display: none;
+      }
+      p {
+        margin: 2em 0;
+      }
+      .block-indent {
+        margin: 0 2em;
+      }
+      .chapter-num, .verse-num {
+        display: none;
+      }
+      &.show-verses {
+        .chapter-num, .verse-num {
+          display: inline;
+          font-weight: 300;
+          font-size: smaller;
+          color: $color-verses;
+        }
       }
     }
   }

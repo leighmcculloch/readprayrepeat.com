@@ -2,7 +2,7 @@ package main
 
 type Bible interface {
 	Source() string
-	NameAbbr() string
+	NameShort() string
 	Name() string
 	GetPassage(reference string) (*BiblePassage, error)
 }
