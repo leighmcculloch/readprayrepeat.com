@@ -77,14 +77,16 @@
         &.p {
           margin: 1.25em 0;
         }
-        &.pi {
-          margin: 0 1em;
-        }
-        &.q, &.q1 {
-          text-indent: 1em;
-        }
-        &.q2, &.q3 {
-          text-indent: 2em;
+        @media (max-width: $width-compact) {
+          &.pi {
+            margin: 0 1em;
+          }
+          &.q, &.q1 {
+            text-indent: 1em;
+          }
+          &.q2, &.q3 {
+            text-indent: 2em;
+          }
         }
       }
       .d, .s, .s1, .s2, .v, .r, .mr, .ms1 {
@@ -108,11 +110,13 @@
       p {
         margin: 2em 0;
       }
-      .block-indent {
-        margin: 0 2em;
-      }
       .chapter-num, .verse-num {
         display: none;
+      }
+      @media (max-width: $width-compact) {
+        .block-indent {
+          margin: 0 2em;
+        }
       }
       &.show-verses {
         .chapter-num, .verse-num {
