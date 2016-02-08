@@ -16,7 +16,7 @@ func main() {
 
 	days := loadDays()
 
-	s.Handle("/index.html", func(path string) (interface{}, []string, string) {
+	s.Page("/index.html", func(path string) (interface{}, []string, string) {
 		return days, []string{"base.html", "index.html"}, "entry"
 	})
 
@@ -52,7 +52,7 @@ func main() {
 
 		path := fmt.Sprintf("%s.html", page.Path())
 		log.Printf("Registering handler for %s", path)
-		s.Handle(path, func(path string) (interface{}, []string, string) {
+		s.Page(path, func(path string) (interface{}, []string, string) {
 			err := page.LoadPassages()
 			if err != nil {
 				log.Fatal(err)
