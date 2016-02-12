@@ -2,6 +2,10 @@
 
 Read and pray each day, using the reading plan my <a href="http://realitysf.com">church family</a> is using in 2016 for the <a href="http://bible.realitysf.com">Year of Biblical Literacy</a>.
 
+## Usage
+
+https://readprayrepeat.com
+
 ## About
 
 ### Why
