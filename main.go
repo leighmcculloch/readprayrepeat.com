@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	s := static.NewStatic()
+	s := static.New()
 
 	days := loadDays()
 
