@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"encoding/csv"
-	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -50,7 +49,7 @@ func main() {
 	for i := range pages {
 		page := pages[i]
 
-		path := fmt.Sprintf("%s.html", page.Path())
+		path := page.Path()
 		log.Printf("Registering handler for %s", path)
 		s.Page(path, func(path string) (interface{}, []string, string) {
 			err := page.LoadPassages()

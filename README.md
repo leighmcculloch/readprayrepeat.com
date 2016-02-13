@@ -38,8 +38,14 @@ make
 
 ### Deploying
 
-This will build and deploy the website to your repositories `origin/gh-pages` branch.
+This will build and deploy the website to an S3 bucket.
 
 ```bash
 make build push
+```
+
+Alternatively, this will build and deploy the website to the repositories `origin/gh-pages`.
+
+```bash
+make build push-github
 ```
