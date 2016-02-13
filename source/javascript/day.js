@@ -1,13 +1,19 @@
 (function() {
   var $textControlVerses;
+  var $textControlBibles;
   var $metaDay;
 
   function init() {
     $textControlVerses = document.querySelectorAll('.text-controls-verses');
+    $textControlBibles = document.querySelectorAll('.text-controls-bibles');
     $metaDay = document.querySelector('meta[name="readprayrepeat:day"]');
 
     for (var i = 0; i < $textControlVerses.length; ++i) {
       $textControlVerses[i].addEventListener("click", onTextControlVersesClick);
+    }
+
+    for (var i = 0; i < $textControlBibles.length; ++i) {
+      $textControlBibles[i].addEventListener("change", onTextControlBiblesChange);
     }
 
     renderCurrentDate();
@@ -16,6 +22,12 @@
   function onTextControlVersesClick(e) {
     e.preventDefault();
     toggleVerses();
+    return false;
+  }
+
+  function onTextControlBiblesChange(e) {
+    e.preventDefault();
+    changeToSelectedBible(this);
     return false;
   }
 
@@ -28,6 +40,11 @@
         $text[i].className = $text[i].className.replace('show-verses', '');
       }
     }
+  }
+
+  function changeToSelectedBible($select) {
+    var selectedBiblePath = $select.options[$select.selectedIndex].value;
+    window.location.href = selectedBiblePath;
   }
 
   function renderCurrentDate() {

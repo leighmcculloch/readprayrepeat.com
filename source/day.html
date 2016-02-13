@@ -56,8 +56,16 @@
       <td class="nav-item nav-previous">
         {{with .PreviousPage}}<a href="{{.Path}}"><i class="icon-left-circled"></i> Day {{.Day.DayNumber}}</a>{{end}}
       </td>
-      <td class="nav-item nav-verses">
+      <td class="nav-item nav-controls">
         <a class="text-controls-verses">Verses</a>
+        &middot;
+        <select class="text-controls-bibles">
+          {{range .Bibles}}
+          <option value="{{$.PathForBible .}}" {{if eq .NameShort $.Bible.NameShort}}selected{{end}}>
+            {{.NameShort}} &ndash; {{.NameCommon}}
+          </option>
+          {{end}}
+        </select>
       </td>
       <td class="nav-item nav-next">
         {{with .NextPage}}<a href="{{.Path}}">Day {{.Day.DayNumber}} <i class="icon-right-circled"></i></a>{{end}}

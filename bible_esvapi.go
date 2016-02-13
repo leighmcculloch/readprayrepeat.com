@@ -23,6 +23,10 @@ func (b BibleESVAPI) NameShort() string {
 	return "ESV"
 }
 
+func (b BibleESVAPI) NameCommon() string {
+	return "English Standard Version"
+}
+
 func (b BibleESVAPI) Name() string {
 	return "English Standard Version"
 }

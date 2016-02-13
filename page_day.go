@@ -15,12 +15,32 @@ type pageDay struct {
 	Bibles []Bible
 }
 
+func (p pageDay) PathBase() string {
+	return fmt.Sprintf("/%d", p.Day.DayNumber)
+}
+
+func (p pageDay) PathSuffix() string {
+	return p.PathSuffixForBible(p.Bible)
+}
+
 func (p pageDay) Path() string {
-	if p.Bible == p.Bibles[0] {
-		return fmt.Sprintf("/%d", p.Day.DayNumber)
+	return p.PathForBible(p.Bible)
+}
+
+func (p pageDay) PathSuffixForBible(bible Bible) string {
+	if p.IsBibleDefault(bible) {
+		return ""
 	} else {
-		return fmt.Sprintf("/%d.%s", p.Day.DayNumber, strings.ToLower(p.Bible.NameShort()))
+		return fmt.Sprintf(".%s", strings.ToLower(bible.NameShort()))
 	}
+}
+
+func (p pageDay) PathForBible(bible Bible) string {
+	return fmt.Sprintf("%s%s", p.PathBase(), p.PathSuffixForBible(bible))
+}
+
+func (p pageDay) IsBibleDefault(bible Bible) bool {
+	return bible == p.Bibles[0]
 }
 
 func (p *pageDay) LoadPassages() error {

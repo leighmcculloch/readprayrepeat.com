@@ -11,9 +11,38 @@
       vertical-align: middle;
     }
     .nav-previous,
-    .nav-verses,
+    .nav-controls,
     .nav-next {
       font-size: 0.5em;
+    }
+    .nav-controls {
+      font-weight: normal;
+      color: $color-unimportant;
+      cursor: pointer;
+
+      a.text-controls-verses {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      select.text-controls-bibles {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &::-ms-expand {
+          display: none;
+        }
+        font-size: inherit;
+        font-family: inherit;
+        font-style: inherit;
+        color: $color-unimportant;
+        outline: none;
+        background: none;
+        border: none;
+        width: 35px;
+      }
     }
   }
 
@@ -23,15 +52,6 @@
       a:hover {
         text-decoration: underline;
       }
-    }
-  }
-
-  a.text-controls-verses {
-    font-weight: normal;
-    color: $color-unimportant;
-    cursor: pointer;
-    &:hover {
-      text-decoration: underline;
     }
   }
 
