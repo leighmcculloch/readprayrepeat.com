@@ -14,6 +14,8 @@ I created this website to fulfill my own need to access the reading plan that my
 ### Reading Plan and Videos
 The reading plan and videos were created by <a href="http://thebibleproject.tumblr.com/readscripture">The Bible Project</a>. This website is not associated with The Bible Project, and just displays the scripture and YouTube videos for each day in the reading plan.
 
+The reading plan has good pace for even those new to the Bible. The accompanying videos by The Bible Project are a phenominal resource.
+
 ## Development
 
 ### Setup
