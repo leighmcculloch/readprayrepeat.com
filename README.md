@@ -14,9 +14,6 @@ I created this website to fulfill my own need to access the reading plan that my
 ### Reading Plan and Videos
 The reading plan and videos were created by <a href="http://thebibleproject.tumblr.com/readscripture">The Bible Project</a>. This website is not associated with The Bible Project, and just displays the scripture and YouTube videos for each day in the reading plan.
 
-### Scripture Text
-Scripture used on the website is from the Contemporary English Version, Second Edition (CEV®) © 2006 American Bible Society. All rights reserved. Used with permission.
-
 ## Development
 
 ### Setup
