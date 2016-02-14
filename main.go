@@ -15,10 +15,6 @@ func main() {
 
 	days := loadDays()
 
-	s.Page("/index.html", func(path string) (interface{}, []string, string) {
-		return days, []string{"base.html", "index.html"}, "entry"
-	})
-
 	bibles := []Bible{
 		NewBiblesOrg(CEV),
 		NewBiblesOrg(GNT),
@@ -45,6 +41,10 @@ func main() {
 			previousPage = &pages[len(pages)-1]
 		}
 	}
+
+	s.Page("/index.html", func(path string) (interface{}, []string, string) {
+		return pages, []string{"base.html", "index.html"}, "entry"
+	})
 
 	for i := range pages {
 		page := pages[i]

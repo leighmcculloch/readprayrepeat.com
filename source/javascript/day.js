@@ -43,8 +43,13 @@
   }
 
   function changeToSelectedBible($select) {
-    var selectedBiblePath = $select.options[$select.selectedIndex].value;
-    window.location.href = selectedBiblePath;
+    var $option = $select.options[$select.selectedIndex];
+
+    var bible = $option.getAttribute('data-bible');
+    window.setBible(bible);
+
+    var path = $option.getAttribute('data-path');
+    window.location.href = path;
   }
 
   function renderCurrentDate() {

@@ -2,7 +2,30 @@
 
 {{define "title"}}Start now{{end}}
 
+{{define "head"}}
+  <script src="javascript/localstorage.js"></script>
+  <script src="javascript/bible.js"></script>
+{{end}}
+
+
 {{define "content"}}
+  <script>
+    var bible = window.getBible();
+    var pageSuffix = '';
+    if (bible != null && bible != 'CEV') {
+      pageSuffix = '.' + bible.toLowerCase();
+    }
+
+    window.addEventListener('load', function() {
+      for(var i=0; i<document.links.length; i++) {
+        var $link = document.links[i];
+        var path = $link.getAttribute('data-path-' + bible.toLowerCase())
+        if (path) {
+          $link.setAttribute('href', path);
+        }
+      }
+    });
+  </script>
   <script>
     var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     var ONE_DAY_IN_SECONDS = 1000 * 60 * 60 * 24;
@@ -27,7 +50,7 @@
 
   <div class="today">
     <script>
-      document.write('<a href="' + today + '">Today is day ' + today + ', start&nbsp;reading.<i class="icon-right-circled"></i></a>');
+      document.write('<a href="' + today + pageSuffix + '">Today is day ' + today + ', start&nbsp;reading.<i class="icon-right-circled"></i></a>');
     </script>
   </div>
 
@@ -40,16 +63,16 @@
       <div>Read</div>
       <div>Pray</div>
     </div>
-    {{range $index, $day := .}}
-    <a class="day" href="{{$day.DayNumber}}">
-      <div class="number">{{$day.DayNumber}}</div>
+    {{range $page := .}}
+    <a class="day" href="{{$page.Day.DayNumber}}" {{range $bible := .Bibles}}data-path-{{$bible.NameShort}}="{{$page.PathForBible $bible}}" {{end}}>
+      <div class="number">{{$page.Day.DayNumber}}</div>
       <div class="date">
         <script>
-          document.write(getDateStringForDay({{$day.DayNumber}}));
+          document.write(getDateStringForDay({{$page.Day.DayNumber}}));
         </script>
       </div>
-      <div class="reading">{{$day.ReadingReference}}</div>
-      <div calss="prayer">{{$day.PrayerReference}}</div>
+      <div class="reading">{{$page.Day.ReadingReference}}</div>
+      <div calss="prayer">{{$page.Day.PrayerReference}}</div>
     </a>
     {{end}}
   </div>

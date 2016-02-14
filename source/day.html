@@ -7,6 +7,8 @@
 {{end}}
 
 {{define "head"}}
+  <script src="javascript/localstorage.js" async="async"></script>
+  <script src="javascript/bible.js" async="async"></script>
   <script src="javascript/day.js" async="async"></script>
   <meta name="readprayrepeat:day" content="{{.Day.DayNumber}}">
 {{end}}
@@ -61,7 +63,7 @@
         &middot;
         <select class="text-controls-bibles">
           {{range .Bibles}}
-          <option value="{{$.PathForBible .}}" {{if eq .NameShort $.Bible.NameShort}}selected{{end}}>
+          <option data-bible="{{.NameShort}}" data-path="{{$.PathForBible .}}" {{if eq .NameShort $.Bible.NameShort}}selected{{end}}>
             {{.NameShort}} &ndash; {{.NameCommon}}
           </option>
           {{end}}
