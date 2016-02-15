@@ -18,6 +18,7 @@ func main() {
 	bibles := []Bible{
 		NewBiblesOrg(CEV),
 		NewBiblesOrg(GNT),
+		NewBibleNET(),
 		NewESVAPI(),
 	}
 
