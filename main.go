@@ -23,6 +23,7 @@ func main() {
 
 	numberPages := len(bibles) * len(days)
 	pages := make([]pageDay, 0, numberPages)
+	uniqPages := pages[0:len(days)]
 	for _, bible := range bibles {
 		var previousPage *pageDay
 		for _, day := range days {
@@ -43,7 +44,7 @@ func main() {
 	}
 
 	s.Page("/index.html", func(path string) (interface{}, []string, string) {
-		return pages, []string{"base.html", "index.html"}, "entry"
+		return uniqPages, []string{"base.html", "index.html"}, "entry"
 	})
 
 	for i := range pages {
