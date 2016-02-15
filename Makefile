@@ -1,8 +1,12 @@
+export CLOUDFLARE_ZONE = 68fa298d917e2222f13f0afe848917ba
+
 run: clean static sass run-go
 	
 debug: clean static sass debug-go
 
 build: clean static sass build-go
+
+deploy: build push cdn
 
 clean:
 	rm -fR build
@@ -45,6 +49,14 @@ push-github:
 	git push --force origin gh-pages:gh-pages && \
 	git checkout -
 
+cdn:
+	curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$(CLOUDFLARE_ZONE)/purge_cache" \
+		-H "X-Auth-Email: $(CLOUDFLARE_EMAIL)" \
+		-H "X-Auth-Key: $(CLOUDFLARE_CLIENT_API_KEY)" \
+		-H "Content-Type: application/json" \
+		--data '{"purge_everything":true}'
+
 setup:
 	brew update
 	brew install wellington # wellington is used for sass building
+
