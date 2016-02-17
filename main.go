@@ -45,7 +45,7 @@ func main() {
 	}
 
 	s.Page("/index.html", func(path string) (interface{}, []string, string) {
-		return uniqPages, []string{"base.html", "index.html"}, "entry"
+		return uniqPages, []string{"source/base.html", "source/index.html"}, "entry"
 	})
 
 	for i := range pages {
@@ -58,7 +58,7 @@ func main() {
 			if err != nil {
 				log.Fatal(err)
 			}
-			return page, []string{"base.html", "day.html"}, "entry"
+			return page, []string{"source/base.html", "source/day.html"}, "entry"
 		})
 	}
 
