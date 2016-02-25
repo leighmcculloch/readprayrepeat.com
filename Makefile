@@ -16,7 +16,7 @@ build-go:
 	go run *.go build
 
 run-go:
-	go run *.go server
+	go run *.go serve
 
 debug-go:
 	godebug run *.go server

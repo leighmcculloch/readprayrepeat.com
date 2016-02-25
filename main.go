@@ -3,24 +3,39 @@ package main
 import (
 	"bufio"
 	"encoding/csv"
+	"html/template"
+	"io"
 	"log"
 	"os"
 	"strings"
 
 	"github.com/leighmcculloch/static"
+	"github.com/leighmcculloch/static/build"
+	"github.com/leighmcculloch/static/serve"
 )
 
-func main() {
-	s := static.New()
+var (
+	templateFuncs = template.FuncMap{
+		"ToLower":    strings.ToLower,
+		"ToUpper":    strings.ToUpper,
+		"UnsafeHTML": unsafeHTML,
+	}
+	templateIndex = template.Must(template.New("index").Funcs(templateFuncs).ParseFiles("source/base.html", "source/index.html"))
+	templateDay   = template.Must(template.New("day").Funcs(templateFuncs).ParseFiles("source/base.html", "source/day.html"))
+)
 
-	days := loadDays()
-
-	bibles := []Bible{
+var (
+	days   = loadDays()
+	bibles = []Bible{
 		NewBiblesOrg(CEV),
 		NewBiblesOrg(GNT),
 		NewBibleNET(),
 		NewESVAPI(),
 	}
+)
+
+func main() {
+	s := static.New()
 
 	numberPages := len(bibles) * len(days)
 	pages := make([]pageDay, 0, numberPages)
@@ -44,8 +59,8 @@ func main() {
 		}
 	}
 
-	s.Page("/index.html", func(path string) (interface{}, []string, string) {
-		return uniqPages, []string{"source/base.html", "source/index.html"}, "entry"
+	s.AddPage("/index.html", func(w io.Writer, path string) error {
+		return templateIndex.ExecuteTemplate(w, "entry", uniqPages)
 	})
 
 	for i := range pages {
@@ -53,16 +68,23 @@ func main() {
 
 		path := page.Path()
 		log.Printf("Registering handler for %s", path)
-		s.Page(path, func(path string) (interface{}, []string, string) {
+		s.AddPage(path, func(w io.Writer, path string) error {
 			err := page.LoadPassages()
 			if err != nil {
 				log.Fatal(err)
 			}
-			return page, []string{"source/base.html", "source/day.html"}, "entry"
+			return templateDay.ExecuteTemplate(w, "entry", page)
 		})
 	}
 
-	s.Run()
+	var renderer static.Renderer
+	switch os.Args[1] {
+	case "build":
+		renderer = build.NewBuilder()
+	default:
+		renderer = serve.NewServer()
+	}
+	s.Render(renderer)
 }
 
 func loadDays() []Day {
@@ -104,4 +126,8 @@ func loadDays() []Day {
 	}
 
 	return days
+}
+
+func unsafeHTML(s string) template.HTML {
+	return template.HTML(s)
 }
