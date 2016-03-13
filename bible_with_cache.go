@@ -1,11 +1,10 @@
 package main
 
 import (
-	"crypto/sha1"
 	"encoding/gob"
 	"fmt"
-	"io"
 	"os"
+	"path/filepath"
 )
 
 const cacheFolder = "cache"
@@ -44,6 +43,10 @@ func loadBiblePassage(bible Bible, reference string) (*BiblePassage, error) {
 }
 
 func saveBiblePassage(bible Bible, reference string, biblePassage *BiblePassage) error {
+	err := os.MkdirAll(getCacheFileDir(bible, reference), os.ModePerm)
+	if err != nil {
+		return err
+	}
 	f, err := os.Create(getCacheFilePath(bible, reference))
 	if err != nil {
 		return err
@@ -59,11 +62,14 @@ func saveBiblePassage(bible Bible, reference string, biblePassage *BiblePassage)
 	return nil
 }
 
+func getCacheFileDir(bible Bible, reference string) string {
+	return filepath.Join(cacheFolder, bible.Source(), bible.NameShort())
+}
+
+func getCacheFileName(bible Bible, reference string) string {
+	return fmt.Sprintf("%s.biblepassage", reference)
+}
+
 func getCacheFilePath(bible Bible, reference string) string {
-	hasher := sha1.New()
-	io.WriteString(hasher, bible.Source())
-	io.WriteString(hasher, bible.NameShort())
-	io.WriteString(hasher, reference)
-	hash := hasher.Sum(nil)
-	return fmt.Sprintf("%s/%0x", cacheFolder, hash)
+	return filepath.Join(getCacheFileDir(bible, reference), getCacheFileName(bible, reference))
 }

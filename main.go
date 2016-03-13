@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"regexp"
 	"strings"
 
 	"github.com/leighmcculloch/static"
@@ -103,6 +104,8 @@ func loadDays() []Day {
 		record := records[i]
 		for column := 0; column < len(record); column++ {
 			record[column] = strings.Trim(record[column], " ")
+			re := regexp.MustCompile(`\s+`)
+			record[column] = re.ReplaceAllString(record[column], " ")
 		}
 	}
 
