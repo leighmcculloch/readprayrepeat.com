@@ -81,7 +81,9 @@ func main() {
 	var renderer static.Renderer
 	switch os.Args[1] {
 	case "build":
-		renderer = build.NewBuilder()
+		builder := build.NewBuilder()
+		builder.BuildConcurrency = 10
+		renderer = builder
 	default:
 		renderer = serve.NewServer()
 	}
