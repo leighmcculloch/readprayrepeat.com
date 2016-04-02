@@ -17,9 +17,11 @@ import (
 
 var (
 	templateFuncs = template.FuncMap{
-		"ToLower":    strings.ToLower,
-		"ToUpper":    strings.ToUpper,
-		"UnsafeHTML": unsafeHTML,
+		"ToLower": strings.ToLower,
+		"ToUpper": strings.ToUpper,
+		"UnsafeHTML": func(s string) template.HTML {
+			return template.HTML(s)
+		},
 	}
 	templateIndex = template.Must(template.New("index").Funcs(templateFuncs).ParseFiles("source/base.html", "source/index.html"))
 	templateDay   = template.Must(template.New("day").Funcs(templateFuncs).ParseFiles("source/base.html", "source/day.html"))
@@ -112,8 +114,4 @@ func getDays() []Day {
 	}
 
 	return NewDaysFromCSV(records)
-}
-
-func unsafeHTML(s string) template.HTML {
-	return template.HTML(s)
 }
