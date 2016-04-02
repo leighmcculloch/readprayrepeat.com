@@ -26,7 +26,7 @@ var (
 )
 
 var (
-	days   = loadDays()
+	days   = getDays()
 	bibles = []Bible{
 		NewBiblesOrg(CEV),
 		NewBiblesOrg(GNT),
@@ -90,7 +90,7 @@ func main() {
 	s.Render(renderer)
 }
 
-func loadDays() []Day {
+func getDays() []Day {
 	csvFile, err := os.Open("data/data.csv")
 	if err != nil {
 		log.Fatal(err)
