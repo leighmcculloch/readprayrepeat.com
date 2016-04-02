@@ -111,26 +111,7 @@ func loadDays() []Day {
 		}
 	}
 
-	daysCount := len(records)
-	days := make([]Day, daysCount)
-
-	for i := 0; i < len(records); i++ {
-		record := records[i]
-
-		dayNumber := i + 1
-		readingReference := record[0]
-		prayerReference := record[1]
-		watchYoutubeId := record[2]
-
-		days[i] = Day{
-			DayNumber:        dayNumber,
-			ReadingReference: readingReference,
-			PrayerReference:  prayerReference,
-			WatchYoutubeId:   watchYoutubeId,
-		}
-	}
-
-	return days
+	return NewDaysFromCSV(records)
 }
 
 func unsafeHTML(s string) template.HTML {
