@@ -78,6 +78,12 @@
     font-weight: 600;
     color: $color-text;
   }
+  
+  .time {
+    font-size: 1em;
+    color: $color-unimportant;
+    margin: 0 0 $margin-standard 0;
+  }
 
   .text {
     margin: $margin-standard;

@@ -47,10 +47,12 @@
   {{end}}
   <div id="reading">
     <h2>Read {{.Day.ReadingReference}}</h2>
+    <div class="time">~{{.Day.ReadingBiblePassage.TimeToReadInMinutes}} mins</div>
     <div class="text {{.Bible.Source}}">{{.Day.ReadingBiblePassage.Html | UnsafeHTML}}</div>
   </div>
   <div id="prayer">
     <h2>Pray {{.Day.PrayerReference}}</h2>
+    <div class="time">~{{.Day.PrayerBiblePassage.TimeToReadInMinutes}} mins</div>
     <div class="text {{.Bible.Source}}">{{.Day.PrayerBiblePassage.Html | UnsafeHTML}}</div>
   </div>
   <table class="nav">
