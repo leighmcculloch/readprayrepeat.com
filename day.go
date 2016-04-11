@@ -6,8 +6,22 @@ type Day struct {
 	ReadingReference string
 	PrayerReference  string
 
-	ReadingBiblePassage *BiblePassage
-	PrayerBiblePassage  *BiblePassage
+	WatchYoutubeDurationMinutes int
+	ReadingBiblePassage         *BiblePassage
+	PrayerBiblePassage          *BiblePassage
+}
+
+func (d *Day) LoadYoutubeDetails() error {
+	switch d.WatchYoutubeId {
+	case "", "...":
+		return nil
+	}
+	durationMinutes, err := GetYoutubeVideoDurationMinutes(d.WatchYoutubeId)
+	if err != nil {
+		return err
+	}
+	d.WatchYoutubeDurationMinutes = durationMinutes
+	return nil
 }
 
 func (d *Day) LoadPassages(bible Bible) error {
@@ -24,4 +38,10 @@ func (d *Day) LoadPassages(bible Bible) error {
 	}
 
 	return nil
+}
+
+func (d Day) TimeToCompleteInMinutes() int {
+	return d.ReadingBiblePassage.TimeToReadInMinutes() +
+		d.PrayerBiblePassage.TimeToReadInMinutes() +
+		d.WatchYoutubeDurationMinutes
 }

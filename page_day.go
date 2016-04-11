@@ -44,5 +44,9 @@ func (p pageDay) IsBibleDefault(bible Bible) bool {
 }
 
 func (p *pageDay) LoadPassages() error {
+	err := p.Day.LoadYoutubeDetails()
+	if err != nil {
+		return err
+	}
 	return p.Day.LoadPassages(p.Bible)
 }
