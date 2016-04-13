@@ -26,24 +26,24 @@
           text-decoration: underline;
         }
       }
-
-      select.text-controls-bibles {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        &::-ms-expand {
-          display: none;
-        }
-        font-size: inherit;
-        font-family: inherit;
-        font-style: inherit;
-        color: $color-unimportant;
-        outline: none;
-        background: none;
-        border: none;
-        width: 35px;
-      }
     }
+  }
+
+  select.text-controls-bibles {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    &::-ms-expand {
+      display: none;
+    }
+    font-size: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    color: $color-unimportant;
+    outline: none;
+    background: none;
+    border: none;
+    width: 35px;
   }
 
   .nav-current-info {
@@ -82,7 +82,6 @@
   .time {
     font-size: 1em;
     color: $color-unimportant;
-    margin: 0 0 $margin-standard 0;
   }
 
   .text {
