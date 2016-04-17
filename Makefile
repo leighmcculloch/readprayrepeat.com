@@ -13,7 +13,7 @@ clean:
 
 build-go:
 	mkdir -p build
-	go run *.go build
+	go run *.go -build
 
 run-go:
 	go run *.go serve

@@ -3,16 +3,16 @@ package main
 import (
 	"bufio"
 	"encoding/csv"
+	"flag"
+	"fmt"
 	"html/template"
-	"io"
 	"log"
+	"net/http"
 	"os"
 	"regexp"
 	"strings"
 
 	"github.com/leighmcculloch/static"
-	"github.com/leighmcculloch/static/build"
-	"github.com/leighmcculloch/static/serve"
 )
 
 var (
@@ -37,8 +37,16 @@ var (
 	}
 )
 
+var build bool
+
+func init() {
+	flag.BoolVar(&build, "build", false, "true if build")
+	flag.Parse()
+}
+
 func main() {
-	s := static.New()
+	mux := http.NewServeMux()
+	paths := []string{}
 
 	numberPages := len(bibles) * len(days)
 	pages := make([]pageDay, 0, numberPages)
@@ -62,34 +70,48 @@ func main() {
 		}
 	}
 
-	s.AddPage("/index.html", func(w io.Writer, path string) error {
-		return templateIndex.ExecuteTemplate(w, "entry", uniqPages)
+	paths = append(paths, "/index.html")
+	mux.HandleFunc("/index.html", func(w http.ResponseWriter, r *http.Request) {
+		templateIndex.ExecuteTemplate(w, "entry", uniqPages)
+	})
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path == "/" {
+			templateIndex.ExecuteTemplate(w, "entry", uniqPages)
+		} else {
+			fs := http.FileServer(http.Dir("build"))
+			fs.ServeHTTP(w, r)
+		}
 	})
 
 	for i := range pages {
 		page := pages[i]
 
 		path := page.Path()
-		log.Printf("Registering handler for %s", path)
-		s.AddPage(path, func(w io.Writer, path string) error {
+		paths = append(paths, path)
+		mux.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
 			err := page.LoadPassages()
 			if err != nil {
 				log.Fatal(err)
 			}
-			return templateDay.ExecuteTemplate(w, "entry", page)
+			templateDay.ExecuteTemplate(w, "entry", page)
 		})
 	}
 
-	var renderer static.Renderer
-	switch os.Args[1] {
-	case "build":
-		builder := build.NewBuilder()
-		builder.BuildConcurrency = 10
-		renderer = builder
-	default:
-		renderer = serve.NewServer()
+	log.Printf("Registered handlers for %d pages", len(pages))
+
+	if build {
+		options := static.NewOptions()
+		static.Build(options, mux, paths, func(e static.Event) {
+			s := fmt.Sprintf("%10s  %-20s", e.Action, e.Path)
+			if e.Error != nil {
+				s += fmt.Sprintf(" Error: %v", e.Error)
+			}
+			log.Println(s)
+		})
+	} else {
+		s := &http.Server{Addr: ":8080", Handler: mux}
+		log.Fatal(s.ListenAndServe())
 	}
-	s.Render(renderer)
 }
 
 func getDays() []Day {
