@@ -16,8 +16,6 @@ import (
 
 var (
 	templateFuncs = template.FuncMap{
-		"ToLower": strings.ToLower,
-		"ToUpper": strings.ToUpper,
 		"UnsafeHTML": func(s string) template.HTML {
 			return template.HTML(s)
 		},
