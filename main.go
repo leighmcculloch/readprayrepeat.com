@@ -69,10 +69,7 @@ func main() {
 		}
 	}
 
-	paths = append(paths, "/index.html")
-	mux.HandleFunc("/index.html", func(w http.ResponseWriter, r *http.Request) {
-		templateIndex.ExecuteTemplate(w, "entry", uniqPages)
-	})
+	paths = append(paths, "/")
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path == "/" {
 			templateIndex.ExecuteTemplate(w, "entry", uniqPages)
