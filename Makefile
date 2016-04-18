@@ -36,8 +36,8 @@ static:
 push: push-s3
 
 push-s3:
-	aws s3 sync build/ s3://readprayrepeat.com/ --acl public-read --content-type text/html --exclude "*.eot" --exclude "*.svg" --exclude "*.ttf" --exclude "*.woff" --exclude "*.js" --exclude "*.css" --exclude "*.png"
 	aws s3 sync build/ s3://readprayrepeat.com/ --acl public-read --exclude "*" --include "*.eot" --include "*.svg" --include "*.ttf" --include "*.woff" --include "*.js" --include "*.css" --include "*.png"
+	aws s3 sync build/ s3://readprayrepeat.com/ --acl public-read --content-type text/html --exclude "*.eot" --exclude "*.svg" --exclude "*.ttf" --exclude "*.woff" --exclude "*.js" --exclude "*.css" --exclude "*.png"
 
 push-github:
 	git branch -D gh-pages 2>/dev/null | true
