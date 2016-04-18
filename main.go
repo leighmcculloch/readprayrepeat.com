@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"encoding/csv"
 	"flag"
-	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -101,11 +100,7 @@ func main() {
 
 	if build {
 		static.Build(mux, paths, func(e static.Event) {
-			s := fmt.Sprintf("%10s  %-20s", e.Action, e.Path)
-			if e.Error != nil {
-				s += fmt.Sprintf(" Error: %v", e.Error)
-			}
-			log.Println(s)
+			log.Println(e)
 		})
 	} else {
 		s := &http.Server{Addr: ":8080", Handler: mux}
