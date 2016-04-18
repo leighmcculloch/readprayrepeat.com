@@ -100,8 +100,7 @@ func main() {
 	log.Printf("Registered handlers for %d pages", len(pages))
 
 	if build {
-		options := static.NewOptions()
-		static.Build(options, mux, paths, func(e static.Event) {
+		static.Build(mux, paths, func(e static.Event) {
 			s := fmt.Sprintf("%10s  %-20s", e.Action, e.Path)
 			if e.Error != nil {
 				s += fmt.Sprintf(" Error: %v", e.Error)
