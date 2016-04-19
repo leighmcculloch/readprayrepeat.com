@@ -12,7 +12,6 @@ clean:
 	rm -fR build
 
 build-go:
-	mkdir -p build
 	go run *.go -build
 
 run-go:
