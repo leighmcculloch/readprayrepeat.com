@@ -91,9 +91,6 @@
     font-weight: normal;
     color: $color-text;
     text-align: justify;
-    @media (min-width: $width-compact) {
-      text-align: center;
-    }
 
     /* source: biblesorg */
     &.biblesorg {
@@ -101,16 +98,14 @@
         &.p {
           margin: 1.25em 0;
         }
-        @media (max-width: $width-compact) {
-          &.pi {
-            margin: 1.25em 1em;
-          }
-          &.q, &.q1 {
-            text-indent: 1em;
-          }
-          &.q2, &.q3 {
-            text-indent: 2em;
-          }
+        &.pi {
+          margin: 1.25em 1em;
+        }
+        &.q, &.q1 {
+          text-indent: 1em;
+        }
+        &.q2, &.q3 {
+          text-indent: 2em;
         }
       }
       .d, .s, .s1, .s2, .v, .r, .mr, .ms1 {
@@ -137,10 +132,8 @@
       .chapter-num, .verse-num {
         display: none;
       }
-      @media (max-width: $width-compact) {
-        .block-indent {
-          margin: 0 2em;
-        }
+      .block-indent {
+        margin: 0 2em;
       }
       &.show-verses {
         .chapter-num, .verse-num {
