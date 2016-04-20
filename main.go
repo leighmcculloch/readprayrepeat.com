@@ -94,7 +94,7 @@ func main() {
 	log.Printf("Registered handlers for %d pages", len(pages))
 
 	if build {
-		static.Build(mux, paths, func(e static.Event) {
+		static.Build(static.DefaultOptions(), mux, paths, func(e static.Event) {
 			log.Println(e)
 		})
 	} else {
