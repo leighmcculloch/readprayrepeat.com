@@ -104,13 +104,19 @@ func (b BibleBiblesOrg) GetPassage(reference string) (*BiblePassage, error) {
 		return nil, err
 	}
 
+	expectedPassageCount := strings.Count(reference, ",") + 1
 	passageCount := len(searchRes.Response.Search.Result.Passages)
-	if passageCount != 1 {
-		return nil, fmt.Errorf("Reference %s returned %d passages, expected 1.", reference, passageCount)
+	if passageCount != expectedPassageCount {
+		return nil, fmt.Errorf("Reference %s returned %d passages, expected %d.", reference, passageCount, expectedPassageCount)
+	}
+
+	html := ""
+	for _, passage := range searchRes.Response.Search.Result.Passages {
+		html += passage.Text
 	}
 
 	biblePassage := BiblePassage{
-		Html:         transposePassageHtml(searchRes.Response.Search.Result.Passages[0].Text),
+		Html:         transposePassageHtml(html),
 		TrackingCode: searchRes.Response.Meta.FumsNoscript,
 		Copyright:    transposePassageCopyright(searchRes.Response.Search.Result.Passages[0].Copyright),
 	}
