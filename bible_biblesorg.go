@@ -104,6 +104,11 @@ func (b BibleBiblesOrg) GetPassage(reference string) (*BiblePassage, error) {
 		return nil, err
 	}
 
+	passageCount := len(searchRes.Response.Search.Result.Passages)
+	if passageCount != 1 {
+		return nil, fmt.Errorf("Reference %s returned %d passages, expected 1.", reference, passageCount)
+	}
+
 	biblePassage := BiblePassage{
 		Html:         transposePassageHtml(searchRes.Response.Search.Result.Passages[0].Text),
 		TrackingCode: searchRes.Response.Meta.FumsNoscript,
