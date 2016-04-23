@@ -22,6 +22,7 @@ var (
 		},
 	}
 	templateIndex = template.Must(template.New("index").Funcs(templateFuncs).ParseFiles("source/base.html", "source/index.html"))
+	templatePlan  = template.Must(template.New("plan").Funcs(templateFuncs).ParseFiles("source/base.html", "source/plan.html"))
 	templateDay   = template.Must(template.New("day").Funcs(templateFuncs).ParseFiles("source/base.html", "source/day.html"))
 )
 
@@ -71,11 +72,16 @@ func main() {
 	paths = append(paths, "/")
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path == "/" {
-			templateIndex.ExecuteTemplate(w, "entry", uniqPages)
+			templateIndex.ExecuteTemplate(w, "entry", nil)
 		} else {
 			fs := http.FileServer(http.Dir("build"))
 			fs.ServeHTTP(w, r)
 		}
+	})
+
+	paths = append(paths, "/plan")
+	mux.HandleFunc("/plan", func(w http.ResponseWriter, r *http.Request) {
+		templatePlan.ExecuteTemplate(w, "entry", uniqPages)
 	})
 
 	for i := range pages {

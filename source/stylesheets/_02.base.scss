@@ -1,4 +1,4 @@
-$font-primary: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$font-primary: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 $font-text: 'Sumana', serif;
 
 $color-text: #1b1b1b;
@@ -14,6 +14,7 @@ $margin-standard: 20px;
 
 body {
   font-family: $font-primary;
+  line-height: 1.45em;
   font-size: 1em;
   font-weight: 400;
 

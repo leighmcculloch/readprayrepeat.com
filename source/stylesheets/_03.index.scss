@@ -8,29 +8,10 @@
     color: $color-text;
   }
 
-  .days {
-    display: table;
+  .plan {
     margin: $margin-standard auto;
-    .headings {
-      display: table-row;
-      font-weight: bold;
-      div {
-        display: table-cell;
-        padding: $margin-standard/4 $margin-standard/2;
-        text-align: left;
-      }
-    }
-    .day {
-      display: table-row;
-      div {
-        display: table-cell;
-        padding: $margin-standard/4 $margin-standard/2;
-        text-align: left;
-        &.number {
-          font-weight: bold;
-        }
-      }
-    }
+    font-weight: 600;
+    color: $color-text;
   }
 }
 

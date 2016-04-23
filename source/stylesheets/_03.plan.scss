@@ -1,0 +1,41 @@
+.page.plan .view {
+  text-align: center;
+
+  .today {
+    margin: $margin-standard auto;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: $color-text;
+  }
+
+  .days {
+    display: table;
+    margin: $margin-standard auto;
+    .headings {
+      display: table-row;
+      font-weight: bold;
+      div {
+        display: table-cell;
+        padding: $margin-standard/4 $margin-standard/2;
+        text-align: left;
+      }
+    }
+    .day {
+      display: table-row;
+      div {
+        display: table-cell;
+        padding: $margin-standard/4 $margin-standard/2;
+        text-align: left;
+        white-space: nowrap;
+        &.number {
+          font-weight: bold;
+        }
+        @media (max-width: $width-compact) {
+          padding: $margin-standard/8 $margin-standard/4;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
