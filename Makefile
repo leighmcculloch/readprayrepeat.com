@@ -15,10 +15,10 @@ build-go:
 	go run *.go -build
 
 run-go:
-	go run *.go serve
+	go run *.go
 
 debug-go:
-	godebug run *.go server
+	godebug run *.go
 
 sass:
 	mkdir -p build/stylesheets
