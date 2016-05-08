@@ -113,7 +113,7 @@ func main() {
 }
 
 func getDays() []Day {
-	csvFile, err := os.Open("data/data.csv")
+	csvFile, err := os.Open("data/readings.csv")
 	if err != nil {
 		log.Fatal(err)
 	}
