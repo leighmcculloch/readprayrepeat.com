@@ -1,0 +1,70 @@
+{{define "page"}}week{{end}}
+
+{{define "title"}}Week {{.Week.Number}}{{end}}
+
+{{define "copyright"}}
+  {{.Day.BiblePassage.Copyright | UnsafeHTML}}
+{{end}}
+
+{{define "head"}}
+  <script src="javascript/localstorage.js" async="async"></script>
+  <script src="javascript/bible.js" async="async"></script>
+  <script src="javascript/day.js" async="async"></script>
+{{end}}
+
+{{define "tail"}}
+  {{.Day.BiblePassage.TrackingCode | UnsafeHTML}}
+{{end}}
+
+{{define "content"}}
+  Week {{.Week.Number}}
+  <div class="nav-current-info">
+    <div class="passages">
+      <a href="#reading">{{.Day.ReadingReference}}</a>
+      &amp;
+      <a href="#prayer">{{.Day.PrayerReference}}</a>
+      <select class="text-controls-bibles">
+        {{range .Bibles}}
+        <option data-bible="{{.NameShort}}" data-path="{{$.PathForBible .}}" {{if eq .NameShort $.Bible.NameShort}}selected{{end}}>
+        {{.NameShort}} &ndash; {{.NameCommon}}
+        </option>
+        {{end}}
+      </select>
+    </div>
+    <div class="time">~{{.Day.TimeToCompleteInMinutes}} mins</div>
+  </div>
+  {{with .Day.WatchYoutubeId}}
+  <div class="watch">
+    <iframe allowfullscreen src="https://www.youtube.com/embed/{{.}}?rel=0&showinfo=0"></iframe>
+  </div>
+  {{end}}
+  <div id="reading">
+    <h2>Read {{.Day.ReadingReference}}</h2>
+    <div class="text {{.Bible.Source}}">{{.Day.ReadingBiblePassage.Html | UnsafeHTML}}</div>
+  </div>
+  <div id="prayer">
+    <h2>Pray {{.Day.PrayerReference}}</h2>
+    <div class="text {{.Bible.Source}}">{{.Day.PrayerBiblePassage.Html | UnsafeHTML}}</div>
+  </div>
+  <table class="nav">
+    <tr>
+      <td class="nav-item nav-previous">
+        {{with .PreviousPage}}<a href="{{.Path}}"><i class="icon-left-circled"></i> Day {{.Day.DayNumber}}</a>{{end}}
+      </td>
+      <td class="nav-item nav-controls">
+        <a class="text-controls-verses">Verses</a>
+        &middot;
+        <select class="text-controls-bibles">
+          {{range .Bibles}}
+          <option data-bible="{{.NameShort}}" data-path="{{$.PathForBible .}}" {{if eq .NameShort $.Bible.NameShort}}selected{{end}}>
+            {{.NameShort}} &ndash; {{.NameCommon}}
+          </option>
+          {{end}}
+        </select>
+      </td>
+      <td class="nav-item nav-next">
+        {{with .NextPage}}<a href="{{.Path}}">Day {{.Day.DayNumber}} <i class="icon-right-circled"></i></a>{{end}}
+      </td>
+    </tr>
+  </table>
+{{end}}
