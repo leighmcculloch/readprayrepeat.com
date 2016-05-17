@@ -10,12 +10,15 @@ deploy: build push cdn
 
 clean:
 	rm -fR build
+	rm -f app
 
 build-go:
-	go run *.go -build
+	go build -o app
+	./app -build
 
 run-go:
-	go run *.go
+	go build -o app
+	./app
 
 debug-go:
 	godebug run *.go
