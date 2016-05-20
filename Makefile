@@ -37,6 +37,9 @@ static:
 
 push: push-s3
 
+push-firebase:
+	firebase deploy
+
 push-s3:
 	aws s3 sync build/ s3://readprayrepeat.com/ --quiet --acl public-read --exclude "*" --include "*.eot" --include "*.svg" --include "*.ttf" --include "*.woff" --include "*.js" --include "*.css" --include "*.png"
 	aws s3 sync build/ s3://readprayrepeat.com/ --quiet --acl public-read --content-type text/html --exclude "*.eot" --exclude "*.svg" --exclude "*.ttf" --exclude "*.woff" --exclude "*.js" --exclude "*.css" --exclude "*.png"
