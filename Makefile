@@ -35,10 +35,20 @@ static:
 	cp -r source/font/* build/font/
 	cp -r source/javascript/* build/javascript/
 
-push: push-s3
+push: push-gcs
 
 push-firebase:
 	firebase deploy
+
+push-gcs:
+	gsutil -q -m -h "Content-Type: text/html"               cp -Z -a public-read -r `find build             -type f | grep -v '\.'`                        gs://readprayrepeat.com/ 
+	gsutil -q -m -h "Content-Type: text/html"               cp -Z -a public-read -r `find build             -type f | grep    '\.\(html\|net\|esv\|gnt\)'` gs://readprayrepeat.com/ 
+	gsutil -q -m -h "Content-Type: text/css"                cp -Z -a public-read -r `find build/stylesheets -type f | grep    '\.css'`                     gs://readprayrepeat.com/stylesheets/
+	gsutil -q -m -h "Content-Type: application/javascript"  cp -Z -a public-read -r `find build/javascript  -type f | grep    '\.js'`                      gs://readprayrepeat.com/javascript/
+	gsutil -q -m -h "Content-Type:"                         cp -Z -a public-read -r `find build/font        -type f | grep    '\.\(svg\|eot\|png\)'`       gs://readprayrepeat.com/font/
+	gsutil -q -m -h "Content-Type: application/x-font-woff" cp -Z -a public-read -r `find build/font        -type f | grep    '\.woff'`                    gs://readprayrepeat.com/font/
+	gsutil -q -m -h "Content-Type: font/truetype"           cp -Z -a public-read -r `find build/font        -type f | grep    '\.ttf'`                     gs://readprayrepeat.com/font/
+	gsutil web set -m index.html -e 404.html gs://readprayrepeat.com
 
 push-s3:
 	aws s3 sync build/ s3://readprayrepeat.com/ --quiet --acl public-read --exclude "*" --include "*.eot" --include "*.svg" --include "*.ttf" --include "*.woff" --include "*.js" --include "*.css" --include "*.png"
