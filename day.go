@@ -16,7 +16,7 @@ func (d *Day) LoadYoutubeDetails() error {
 	case "", "...":
 		return nil
 	}
-	durationMinutes, err := GetYoutubeVideoDurationMinutes(d.WatchYoutubeId)
+	durationMinutes, err := getYoutubeVideoDurationMinutes(d.WatchYoutubeId)
 	if err != nil {
 		return err
 	}

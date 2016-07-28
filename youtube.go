@@ -10,13 +10,13 @@ import (
 	"strconv"
 )
 
-var youtubeApiKey = os.Getenv("GOOGLE_YOUTUBE_API_KEY")
+var youtubeAPIKey = os.Getenv("GOOGLE_YOUTUBE_API_KEY")
 
-func GetYoutubeVideoDurationMinutes(youtubeId string) (int, error) {
+func getYoutubeVideoDurationMinutes(youtubeID string) (int, error) {
 	q := url.Values{}
-	q.Add("key", youtubeApiKey)
+	q.Add("key", youtubeAPIKey)
 	q.Add("part", "contentDetails")
-	q.Add("id", youtubeId)
+	q.Add("id", youtubeID)
 
 	u := url.URL{
 		Scheme:   "https",
@@ -47,7 +47,7 @@ func GetYoutubeVideoDurationMinutes(youtubeId string) (int, error) {
 	}
 
 	if len(response.Items) != 1 {
-		return 0, fmt.Errorf("Response items for Youtube ID %v was expected to be a single item, but was: %v", youtubeId, response.Items)
+		return 0, fmt.Errorf("Response items for Youtube ID %v was expected to be a single item, but was: %v", youtubeID, response.Items)
 	}
 	durationString := response.Items[0].ContentDetails.Duration
 	r := regexp.MustCompile(`^PT([0-9]+)M`)
