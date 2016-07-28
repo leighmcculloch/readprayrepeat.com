@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"net/http"
 	"net/url"
@@ -48,7 +47,7 @@ func GetYoutubeVideoDurationMinutes(youtubeId string) (int, error) {
 	}
 
 	if len(response.Items) != 1 {
-		return 0, errors.New(fmt.Sprintf("Response items for Youtube ID %v was expected to be a single item, but was: %v", youtubeId, response.Items))
+		return 0, fmt.Errorf("Response items for Youtube ID %v was expected to be a single item, but was: %v", youtubeId, response.Items)
 	}
 	durationString := response.Items[0].ContentDetails.Duration
 	r := regexp.MustCompile(`^PT([0-9]+)M`)
