@@ -1,12 +1,39 @@
 (function() {
+  var AUDIO_PLAY = '🔊';
+  var AUDIO_STOP = '🔇';
+
   var $textControlVerses;
   var $textControlBibles;
   var $metaDay;
 
+  var voice;
+
   function init() {
+    $textControlAudios = document.querySelectorAll('.text-controls-audio');
     $textControlVerses = document.querySelectorAll('.text-controls-verses');
     $textControlBibles = document.querySelectorAll('.text-controls-bibles');
     $metaDay = document.querySelector('meta[name="readprayrepeat:day"]');
+
+    if ('speechSynthesis' in window) {
+      var voiceInit = function() {
+        var voices = window.speechSynthesis.getVoices();
+        var preferredVoices = voices.filter(function(voice) {
+          return voice.localService && voice.lang == 'en-GB';
+        });
+        voice = preferredVoices[0] || allVoices[0];
+        for (var i = 0; i < $textControlAudios.length; ++i) {
+          $textControlAudios[i].style.display = 'block';
+          $textControlAudios[i].innerText = AUDIO_PLAY;
+          $textControlAudios[i].addEventListener("click", onTextControlAudiosClick);
+        }
+      };
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.onvoiceschanged = voiceInit;
+      var voices = window.speechSynthesis.getVoices();
+      if (voices.length > 0) {
+        voiceInit();
+      }
+    }
 
     for (var i = 0; i < $textControlVerses.length; ++i) {
       $textControlVerses[i].addEventListener("click", onTextControlVersesClick);
@@ -19,6 +46,13 @@
     renderCurrentDate();
   }
 
+  function onTextControlAudiosClick(e) {
+    e.preventDefault();
+    var $target = e.target || e.srcElement;
+    toggleAudio($target)
+    return false;
+  }
+
   function onTextControlVersesClick(e) {
     e.preventDefault();
     toggleVerses();
@@ -29,6 +63,26 @@
     e.preventDefault();
     changeToSelectedBible(this);
     return false;
+  }
+
+  function toggleAudio($domElement) {
+    if ($domElement.innerText == AUDIO_PLAY) {
+      var text = $domElement.nextElementSibling.innerText;
+      var utterance = new SpeechSynthesisUtterance(text);
+      utterance.voice = voice;
+      console.log('Voice: ' + utterance.voice.name + ' Lang: ' + utterance.voice.lang);
+      utterance.onend = function() {
+        $domElement.innerText = AUDIO_PLAY;
+      };
+      window.speechSynthesis.speak(utterance);
+      for (var i = 0; i < $textControlAudios.length; ++i) {
+        $textControlAudios[i].innerText = AUDIO_PLAY;
+      }
+      $domElement.innerText = AUDIO_STOP;
+    } else if ($domElement.innerText == AUDIO_STOP) {
+      window.speechSynthesis.cancel();
+      $domElement.innerText = AUDIO_PLAY;
+    }
   }
 
   function toggleVerses() {

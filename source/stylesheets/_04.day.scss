@@ -78,7 +78,12 @@
     font-weight: 600;
     color: $color-text;
   }
-  
+
+  .text-controls-audio {
+    display: none;
+    cursor: pointer;
+  }
+
   .time {
     font-size: 1em;
     color: $color-unimportant;
