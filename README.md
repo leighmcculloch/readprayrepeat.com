@@ -37,14 +37,8 @@ make
 
 ### Deploying
 
-This will build and deploy the website to an S3 bucket.
+This will build and deploy the website to Google Storage.
 
 ```bash
 make build push
-```
-
-Alternatively, this will build and deploy the website to the repositories `origin/gh-pages`.
-
-```bash
-make build push-github
 ```

@@ -1,7 +1,7 @@
 export CLOUDFLARE_ZONE = 68fa298d917e2222f13f0afe848917ba
 
 run: clean static sass run-go
-	
+
 debug: clean static sass debug-go
 
 build: clean static sass build-go
@@ -35,12 +35,7 @@ static:
 	cp -r source/font/* build/font/
 	cp -r source/javascript/* build/javascript/
 
-push: push-gcs
-
-push-firebase:
-	firebase deploy
-
-push-gcs:
+push:
 	gsutil -q -m -h "Content-Type: text/html"               cp -Z -a public-read -r `find build             -type f | grep -v '\.'`                        gs://readprayrepeat.com/ 
 	gsutil -q -m -h "Content-Type: text/html"               cp -Z -a public-read -r `find build             -type f | grep    '\.\(html\|net\|esv\|gnt\)'` gs://readprayrepeat.com/ 
 	gsutil -q -m -h "Content-Type: text/css"                cp -Z -a public-read -r `find build/stylesheets -type f | grep    '\.css'`                     gs://readprayrepeat.com/stylesheets/
@@ -49,20 +44,6 @@ push-gcs:
 	gsutil -q -m -h "Content-Type: application/x-font-woff" cp -Z -a public-read -r `find build/font        -type f | grep    '\.woff'`                    gs://readprayrepeat.com/font/
 	gsutil -q -m -h "Content-Type: font/truetype"           cp -Z -a public-read -r `find build/font        -type f | grep    '\.ttf'`                     gs://readprayrepeat.com/font/
 	gsutil web set -m index.html -e 404.html gs://readprayrepeat.com
-
-push-s3:
-	aws s3 sync build/ s3://readprayrepeat.com/ --quiet --acl public-read --exclude "*" --include "*.eot" --include "*.svg" --include "*.ttf" --include "*.woff" --include "*.js" --include "*.css" --include "*.png"
-	aws s3 sync build/ s3://readprayrepeat.com/ --quiet --acl public-read --content-type text/html --exclude "*.eot" --exclude "*.svg" --exclude "*.ttf" --exclude "*.woff" --exclude "*.js" --exclude "*.css" --exclude "*.png"
-
-push-github:
-	git branch -D gh-pages 2>/dev/null | true
-	git branch -D gh-pages-draft 2>/dev/null | true
-	git checkout -b gh-pages-draft && \
-	git add -f build && \
-	git commit -m "Deploy to gh-pages" && \
-	git subtree split --prefix build -b gh-pages && \
-	git push --force origin gh-pages:gh-pages && \
-	git checkout -
 
 cdn:
 	curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$(CLOUDFLARE_ZONE)/purge_cache" \
