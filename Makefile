@@ -24,8 +24,7 @@ debug-go:
 	godebug run *.go
 
 sass:
-	mkdir -p build/stylesheets
-	cd source; wt compile -b ../build stylesheets/all.scss
+	wt compile -b build/stylesheets/ source/stylesheets/all.scss
 
 static:
 	mkdir -p build/font
@@ -53,6 +52,5 @@ cdn:
 		--data '{"purge_everything":true}'
 
 setup:
-	brew update
-	brew install wellington # wellington is used for sass building
+	go get github.com/wellington/wellington/wt
 
