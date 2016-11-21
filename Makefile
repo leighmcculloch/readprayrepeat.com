@@ -53,4 +53,5 @@ cdn:
 
 setup:
 	go get github.com/wellington/wellington/wt
+	go get github.com/leighmcculloch/static
 
