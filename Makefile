@@ -24,7 +24,8 @@ debug-go:
 	godebug run *.go
 
 sass:
-	wt compile -b build/stylesheets/ source/stylesheets/all.scss
+	mkdir -p build/stylesheets
+	./build-tools/sassc/bin/sassc source/stylesheets/all.scss > build/stylesheets/all.css
 
 static:
 	mkdir -p build/font
@@ -51,7 +52,14 @@ cdn:
 		-H "Content-Type: application/json" \
 		--data '{"purge_everything":true}'
 
-setup:
-	go get github.com/wellington/wellington/wt
+bootstrap: deps build-tools
+
+deps:
 	go get github.com/leighmcculloch/static
 
+build-tools:
+	mkdir build-tools
+	git clone https://github.com/sass/libsass.git build-tools/libsass
+	cd build-tools/libsass && $(MAKE)
+	git clone https://github.com/sass/sassc.git build-tools/sassc
+	cd build-tools/sassc && SASS_LIBSASS_PATH=../libsass $(MAKE)
