@@ -31,7 +31,7 @@ var (
 		NewBiblesOrg(CEV),
 		NewBiblesOrg(GNT),
 		NewBibleNET(),
-		NewESVAPI(),
+		// NewESVAPI(),
 	}
 )
 
