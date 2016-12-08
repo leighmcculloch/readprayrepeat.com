@@ -52,12 +52,12 @@ cdn:
 		-H "Content-Type: application/json" \
 		--data '{"purge_everything":true}'
 
-bootstrap: deps build-tools
+setup: setup-deps setup-build-tools
 
-deps:
+setup-deps:
 	go get github.com/leighmcculloch/static
 
-build-tools:
+setup-build-tools:
 	mkdir build-tools
 	git clone https://github.com/sass/libsass.git build-tools/libsass
 	cd build-tools/libsass && $(MAKE)
