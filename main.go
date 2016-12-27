@@ -71,7 +71,7 @@ func main() {
 	paths = append(paths, "/")
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path == "/" {
-			templateIndex.ExecuteTemplate(w, "entry", nil)
+			templateIndex.ExecuteTemplate(w, "entry", uniqPages)
 		} else {
 			fs := http.FileServer(http.Dir("build"))
 			fs.ServeHTTP(w, r)

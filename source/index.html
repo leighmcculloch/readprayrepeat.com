@@ -31,7 +31,9 @@
 
   <div class="today">
     <script>
-      document.write('<a href="' + today + pageSuffix + '">Read today, day ' + today + '<i class="icon-right-circled"></i></a>');
+      if (today <= {{len .}}) {
+          document.write('<a href="' + today + pageSuffix + '">Read today, day ' + today + '<i class="icon-right-circled"></i></a>');
+      }
     </script>
   </div>
 
