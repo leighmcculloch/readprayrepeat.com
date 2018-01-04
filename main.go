@@ -11,7 +11,22 @@ import (
 	"regexp"
 	"strings"
 
+	"4d63.com/biblepassageapi"
 	"github.com/leighmcculloch/static"
+)
+
+const (
+	cachePath = "cache"
+)
+
+var (
+	biblesOrgAPIKey = func() string {
+		apiKey := os.Getenv("API_KEY_BIBLESORG")
+		if apiKey == "" {
+			panic("API_KEY_BIBLESORG not set")
+		}
+		return apiKey
+	}()
 )
 
 var (
@@ -27,11 +42,10 @@ var (
 
 var (
 	days   = getDays()
-	bibles = []Bible{
-		NewBiblesOrg(CEV),
-		NewBiblesOrg(GNT),
-		NewBibleNET(),
-		// NewESVAPI(),
+	bibles = []biblepassageapi.Bible{
+		biblepassageapi.Cache(biblepassageapi.NewBiblesOrg(biblesOrgAPIKey, biblepassageapi.CEV), cachePath),
+		biblepassageapi.Cache(biblepassageapi.NewBiblesOrg(biblesOrgAPIKey, biblepassageapi.GNT), cachePath),
+		biblepassageapi.Cache(biblepassageapi.NewBibleNET(), cachePath),
 	}
 )
 

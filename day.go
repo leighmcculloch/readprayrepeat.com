@@ -1,5 +1,9 @@
 package main
 
+import (
+	"4d63.com/biblepassageapi"
+)
+
 type Day struct {
 	DayNumber        int
 	WatchYoutubeId   string
@@ -7,8 +11,8 @@ type Day struct {
 	PrayerReference  string
 
 	WatchYoutubeDurationMinutes int
-	ReadingBiblePassage         *BiblePassage
-	PrayerBiblePassage          *BiblePassage
+	ReadingBiblePassage         *biblepassageapi.Passage
+	PrayerBiblePassage          *biblepassageapi.Passage
 }
 
 func (d *Day) LoadYoutubeDetails() error {
@@ -24,15 +28,15 @@ func (d *Day) LoadYoutubeDetails() error {
 	return nil
 }
 
-func (d *Day) LoadPassages(bible Bible) error {
+func (d *Day) LoadPassages(bible biblepassageapi.Bible) error {
 	var err error
 
-	d.ReadingBiblePassage, err = GetBiblePassageWithCache(bible, d.ReadingReference)
+	d.ReadingBiblePassage, err = bible.GetPassage(d.ReadingReference)
 	if err != nil {
 		return err
 	}
 
-	d.PrayerBiblePassage, err = GetBiblePassageWithCache(bible, d.PrayerReference)
+	d.PrayerBiblePassage, err = bible.GetPassage(d.PrayerReference)
 	if err != nil {
 		return err
 	}
