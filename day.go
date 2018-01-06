@@ -1,7 +1,11 @@
 package main
 
 import (
+	"context"
+	"time"
+
 	"4d63.com/biblepassageapi"
+	"4d63.com/youtubelength"
 )
 
 type Day struct {
@@ -20,11 +24,11 @@ func (d *Day) LoadYoutubeDetails() error {
 	case "", "...":
 		return nil
 	}
-	durationMinutes, err := getYoutubeVideoDurationMinutes(d.WatchYoutubeId)
+	duration, err := youtubelength.Get(context.TODO(), d.WatchYoutubeId)
 	if err != nil {
 		return err
 	}
-	d.WatchYoutubeDurationMinutes = durationMinutes
+	d.WatchYoutubeDurationMinutes = int(duration / time.Minute)
 	return nil
 }
 
