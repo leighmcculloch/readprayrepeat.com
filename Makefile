@@ -25,7 +25,7 @@ debug-go:
 
 sass:
 	mkdir -p build/stylesheets
-	./build-tools/sassc/bin/sassc source/stylesheets/all.scss > build/stylesheets/all.css
+	sassc source/stylesheets/all.scss > build/stylesheets/all.css
 
 static:
 	mkdir -p build/font
@@ -51,15 +51,3 @@ cdn:
 		-H "X-Auth-Key: $(CLOUDFLARE_CLIENT_API_KEY)" \
 		-H "Content-Type: application/json" \
 		--data '{"purge_everything":true}'
-
-setup: setup-deps setup-build-tools
-
-setup-deps:
-	go get github.com/leighmcculloch/static
-
-setup-build-tools:
-	mkdir build-tools
-	git clone https://github.com/sass/libsass.git build-tools/libsass
-	cd build-tools/libsass && $(MAKE)
-	git clone https://github.com/sass/sassc.git build-tools/sassc
-	cd build-tools/sassc && SASS_LIBSASS_PATH=../libsass $(MAKE)
