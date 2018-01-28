@@ -1,15 +1,11 @@
 package main
 
 import (
-	"bufio"
-	"encoding/csv"
 	"flag"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
-	"regexp"
-	"strings"
 
 	"4d63.com/biblepassageapi"
 	"github.com/leighmcculloch/static"
@@ -131,21 +127,7 @@ func getDays() []Day {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer csvFile.Close()
 
-	reader := csv.NewReader(bufio.NewReader(csvFile))
-	records, err := reader.ReadAll()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	for i := 0; i < len(records); i++ {
-		record := records[i]
-		for column := 0; column < len(record); column++ {
-			record[column] = strings.Trim(record[column], " ")
-			re := regexp.MustCompile(`\s+`)
-			record[column] = re.ReplaceAllString(record[column], " ")
-		}
-	}
-
-	return NewDaysFromCSV(records)
+	return NewDaysFromCSV(csvFile)
 }
