@@ -1,6 +1,6 @@
 # Read the Bible Today
 
-Read the Bible today, using the reading plan my <a href="http://realitysf.com">church family</a> is using in 2016 for the <a href="http://bible.realitysf.com">Year of Biblical Literacy</a>.
+Read the Bible today, using the reading plan my <a href="http://realitysf.com">church family</a> used in 2016 for the <a href="http://bible.realitysf.com">Year of Biblical Literacy</a>.
 
 ## Usage
 
@@ -20,7 +20,7 @@ The reading plan has good pace for even those new to the Bible. The accompanying
 
 ### Setup
 
-Requires `brew` to be installed.
+Requires `sassc` to be installed.
 
 ```bash
 go get github.com/leighmcculloch/today.bible
@@ -29,7 +29,7 @@ make setup
 
 ### Using Locally
 
-This will start a local server at `localhost:4567`.
+This will start a local server at `localhost:8080`.
 
 ```bash
 make
@@ -40,5 +40,5 @@ make
 This will build and deploy the website to Google Storage.
 
 ```bash
-make build push
+make deploy
 ```
