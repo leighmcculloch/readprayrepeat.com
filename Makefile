@@ -30,7 +30,6 @@ sass:
 static:
 	mkdir -p build/font
 	mkdir -p build/javascript
-	cp source/CNAME build/CNAME
 	cp source/favicon.png build/favicon.png
 	cp -r source/font/* build/font/
 	cp -r source/javascript/* build/javascript/
