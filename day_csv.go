@@ -47,9 +47,8 @@ func NewDayFromCSVRecord(dayNumber int, record []string) Day {
 		record[column] = collapsewhitespace.String(record[column])
 	}
 	return Day{
-		DayNumber:        dayNumber,
-		ReadingReference: record[0],
-		PrayerReference:  record[1],
-		WatchYoutubeId:   record[2],
+		DayNumber:      dayNumber,
+		References:     []string{record[0], record[1]},
+		WatchYoutubeId: record[2],
 	}
 }

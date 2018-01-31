@@ -3,7 +3,7 @@
 {{define "title"}}Day {{.Day.DayNumber}}{{end}}
 
 {{define "copyright"}}
-  {{.Day.ReadingBiblePassage.Copyright | UnsafeHTML}}
+  {{range .Day.BiblePassages}}{{.Copyright | UnsafeHTML}}{{end}}
 {{end}}
 
 {{define "head"}}
@@ -14,8 +14,7 @@
 {{end}}
 
 {{define "tail"}}
-  {{.Day.ReadingBiblePassage.TrackingCode | UnsafeHTML}}
-  {{.Day.PrayerBiblePassage.TrackingCode | UnsafeHTML}}
+  {{range .Day.BiblePassages}}{{.TrackingCode | UnsafeHTML}}{{end}}
 {{end}}
 
 {{define "content"}}
@@ -35,9 +34,10 @@
   <div class="nav-current-info">
     <div class="nav-current-date">&nbsp;</div>
     <div class="passages">
-      <a href="#reading">{{.Day.ReadingReference}}</a>
-      &amp;
-      <a href="#prayer">{{.Day.PrayerReference}}</a>
+      {{range $i, $r := .Day.References}}
+      {{if $i}}&amp;{{end}}
+      <a href="#reading-{{$i}}">{{$r}}</a>
+      {{end}}
     </div>
     <div class="time">~{{.Day.TimeToCompleteInMinutes}} mins</div>
   </div>
@@ -46,16 +46,13 @@
     <iframe allowfullscreen src="https://www.youtube.com/embed/{{.}}?rel=0&showinfo=0"></iframe>
   </div>
   {{end}}
-  <div id="reading">
-    <h2>Read {{.Day.ReadingReference}}</h2>
+  {{range $i, $bp := .Day.BiblePassages}}
+  <div id="reading-{{$i}}">
+    <h2>Read {{index $.Day.References $i}}</h2>
     <a class="text-controls-audio"></a>
-    <div class="text {{.Bible.Source}}">{{.Day.ReadingBiblePassage.Html | UnsafeHTML}}</div>
+    <div class="text {{$.Bible.Source}}">{{$bp.Html | UnsafeHTML}}</div>
   </div>
-  <div id="prayer">
-    <h2>Pray {{.Day.PrayerReference}}</h2>
-    <a class="text-controls-audio"></a>
-    <div class="text {{.Bible.Source}}">{{.Day.PrayerBiblePassage.Html | UnsafeHTML}}</div>
-  </div>
+  {{end}}
   <table class="nav">
     <tr>
       <td class="nav-item nav-previous">

@@ -85,7 +85,10 @@ func main() {
 			if err != nil {
 				log.Fatal(err)
 			}
-			templateDay.ExecuteTemplate(w, "entry", page)
+			err = templateDay.ExecuteTemplate(w, "entry", page)
+			if err != nil {
+				log.Fatal(err)
+			}
 		})
 	}
 

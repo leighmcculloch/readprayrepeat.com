@@ -9,14 +9,12 @@ import (
 )
 
 type Day struct {
-	DayNumber        int
-	WatchYoutubeId   string
-	ReadingReference string
-	PrayerReference  string
+	DayNumber      int
+	WatchYoutubeId string
+	References     []string
 
 	WatchYoutubeDurationMinutes int
-	ReadingBiblePassage         *biblepassageapi.Passage
-	PrayerBiblePassage          *biblepassageapi.Passage
+	BiblePassages               []*biblepassageapi.Passage
 }
 
 func (d *Day) LoadYoutubeDetails() error {
@@ -33,23 +31,22 @@ func (d *Day) LoadYoutubeDetails() error {
 }
 
 func (d *Day) LoadPassages(bible biblepassageapi.Bible) error {
-	var err error
-
-	d.ReadingBiblePassage, err = bible.GetPassage(d.ReadingReference)
-	if err != nil {
-		return err
-	}
-
-	d.PrayerBiblePassage, err = bible.GetPassage(d.PrayerReference)
-	if err != nil {
-		return err
+	d.BiblePassages = []*biblepassageapi.Passage{}
+	for _, r := range d.References {
+		bp, err := bible.GetPassage(r)
+		if err != nil {
+			return err
+		}
+		d.BiblePassages = append(d.BiblePassages, bp)
 	}
 
 	return nil
 }
 
 func (d Day) TimeToCompleteInMinutes() int {
-	return d.ReadingBiblePassage.TimeToReadInMinutes() +
-		d.PrayerBiblePassage.TimeToReadInMinutes() +
-		d.WatchYoutubeDurationMinutes
+	mins := d.WatchYoutubeDurationMinutes
+	for _, bp := range d.BiblePassages {
+		mins += bp.TimeToReadInMinutes()
+	}
+	return mins
 }
