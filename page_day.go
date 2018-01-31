@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 
 	"4d63.com/biblepassageapi"
 )
@@ -14,10 +13,6 @@ type pageDay struct {
 	Day Day
 
 	Bible biblepassageapi.Bible
-}
-
-func (p pageDay) Date() time.Time {
-	return time.Date(time.Now().Year(), 1, 1, 0, 0, 0, 0, time.UTC).AddDate(0, 0, p.Day.DayNumber-1)
 }
 
 func (p pageDay) Path() string {
