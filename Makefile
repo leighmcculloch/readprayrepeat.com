@@ -1,4 +1,4 @@
-export CLOUDFLARE_ZONE = 68fa298d917e2222f13f0afe848917ba
+export CLOUDFLARE_ZONE = 462201475c5da00f8d7a3bd778226fe5
 
 run: clean static sass run-go
 
@@ -35,14 +35,14 @@ static:
 	cp -r source/javascript/* build/javascript/
 
 push:
-	gsutil -q -m -h "Content-Type: text/html"               cp -Z -a public-read -r `find build             -type f | grep -v '\.'`                        gs://readprayrepeat.com/ 
-	gsutil -q -m -h "Content-Type: text/html"               cp -Z -a public-read -r `find build             -type f | grep    '\.\(html\|net\|esv\|gnt\)'` gs://readprayrepeat.com/ 
-	gsutil -q -m -h "Content-Type: text/css"                cp -Z -a public-read -r `find build/stylesheets -type f | grep    '\.css'`                     gs://readprayrepeat.com/stylesheets/
-	gsutil -q -m -h "Content-Type: application/javascript"  cp -Z -a public-read -r `find build/javascript  -type f | grep    '\.js'`                      gs://readprayrepeat.com/javascript/
-	gsutil -q -m -h "Content-Type:"                         cp -Z -a public-read -r `find build/font        -type f | grep    '\.\(svg\|eot\|png\)'`       gs://readprayrepeat.com/font/
-	gsutil -q -m -h "Content-Type: application/x-font-woff" cp -Z -a public-read -r `find build/font        -type f | grep    '\.woff'`                    gs://readprayrepeat.com/font/
-	gsutil -q -m -h "Content-Type: font/truetype"           cp -Z -a public-read -r `find build/font        -type f | grep    '\.ttf'`                     gs://readprayrepeat.com/font/
-	gsutil web set -m index.html -e 404.html gs://readprayrepeat.com
+	gsutil -q -m -h "Content-Type: text/html"               cp -Z -a public-read -r `find build             -type f | grep -v '\.'`                        gs://today.bible/ 
+	gsutil -q -m -h "Content-Type: text/html"               cp -Z -a public-read -r `find build             -type f | grep    '\.\(html\|net\|esv\|gnt\)'` gs://today.bible/ 
+	gsutil -q -m -h "Content-Type: text/css"                cp -Z -a public-read -r `find build/stylesheets -type f | grep    '\.css'`                     gs://today.bible/stylesheets/
+	gsutil -q -m -h "Content-Type: application/javascript"  cp -Z -a public-read -r `find build/javascript  -type f | grep    '\.js'`                      gs://today.bible/javascript/
+	gsutil -q -m -h "Content-Type:"                         cp -Z -a public-read -r `find build/font        -type f | grep    '\.\(svg\|eot\|png\)'`       gs://today.bible/font/
+	gsutil -q -m -h "Content-Type: application/x-font-woff" cp -Z -a public-read -r `find build/font        -type f | grep    '\.woff'`                    gs://today.bible/font/
+	gsutil -q -m -h "Content-Type: font/truetype"           cp -Z -a public-read -r `find build/font        -type f | grep    '\.ttf'`                     gs://today.bible/font/
+	gsutil web set -m index.html -e 404.html gs://today.bible
 
 cdn:
 	curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$(CLOUDFLARE_ZONE)/purge_cache" \

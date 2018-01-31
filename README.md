@@ -1,10 +1,10 @@
-# Read, Pray, Repeat
+# Read the Bible Today
 
-Read and pray each day, using the reading plan my <a href="http://realitysf.com">church family</a> is using in 2016 for the <a href="http://bible.realitysf.com">Year of Biblical Literacy</a>.
+Read the Bible today, using the reading plan my <a href="http://realitysf.com">church family</a> is using in 2016 for the <a href="http://bible.realitysf.com">Year of Biblical Literacy</a>.
 
 ## Usage
 
-https://readprayrepeat.com
+https://today.bible
 
 ## About
 
@@ -23,7 +23,7 @@ The reading plan has good pace for even those new to the Bible. The accompanying
 Requires `brew` to be installed.
 
 ```bash
-go get github.com/leighmcculloch/readprayrepeat.com
+go get github.com/leighmcculloch/today.bible
 make setup
 ```
 
