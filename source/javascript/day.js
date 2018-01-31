@@ -3,7 +3,6 @@
   var AUDIO_STOP = '🔇';
 
   var $textControlVerses;
-  var $textControlBibles;
   var $metaDay;
 
   var voice;
@@ -38,10 +37,6 @@
       $textControlVerses[i].addEventListener("click", onTextControlVersesClick);
     }
 
-    for (var i = 0; i < $textControlBibles.length; ++i) {
-      $textControlBibles[i].addEventListener("change", onTextControlBiblesChange);
-    }
-
     renderCurrentDate();
   }
 
@@ -55,12 +50,6 @@
   function onTextControlVersesClick(e) {
     e.preventDefault();
     toggleVerses();
-    return false;
-  }
-
-  function onTextControlBiblesChange(e) {
-    e.preventDefault();
-    changeToSelectedBible(this);
     return false;
   }
 
