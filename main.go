@@ -36,52 +36,40 @@ var (
 	templateDay   = template.Must(template.New("day").Funcs(templateFuncs).ParseFiles("source/base.html", "source/day.html"))
 )
 
-var (
-	days   = getDays()
-	bibles = []biblepassageapi.Bible{
-		biblepassageapi.Cache(biblepassageapi.NewBiblesOrg(biblesOrgAPIKey, biblepassageapi.CEV), cachePath),
-		biblepassageapi.Cache(biblepassageapi.NewBiblesOrg(biblesOrgAPIKey, biblepassageapi.GNT), cachePath),
-		biblepassageapi.Cache(biblepassageapi.NewBibleNET(), cachePath),
-	}
-)
-
-var build bool
-
-func init() {
-	flag.BoolVar(&build, "build", false, "true if build")
-	flag.Parse()
-}
-
 func main() {
+	flagBuild := flag.Bool("build", false, "true to build, false to run server")
+	flag.Parse()
+
+	days := getDays()
+	bible := biblepassageapi.Cache(
+		biblepassageapi.NewBiblesOrg(biblesOrgAPIKey, biblepassageapi.CEV),
+		cachePath,
+	)
+
 	mux := http.NewServeMux()
 	paths := []string{}
 
-	numberPages := len(bibles) * len(days)
-	pages := make([]pageDay, 0, numberPages)
-	uniqPages := pages[0:len(days)]
-	for _, bible := range bibles {
-		var previousPage *pageDay
-		for _, day := range days {
-			page := pageDay{
-				PreviousPage: previousPage,
-				Day:          day,
-				Bible:        bible,
-				Bibles:       bibles,
-			}
-
-			pages = append(pages, page)
-
-			if previousPage != nil {
-				previousPage.NextPage = &page
-			}
-			previousPage = &pages[len(pages)-1]
+	pages := []*pageDay{}
+	var previousPage *pageDay
+	for _, day := range days {
+		page := &pageDay{
+			PreviousPage: previousPage,
+			Day:          day,
+			Bible:        bible,
 		}
+
+		if previousPage != nil {
+			previousPage.NextPage = page
+		}
+		previousPage = page
+
+		pages = append(pages, page)
 	}
 
 	paths = append(paths, "/")
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path == "/" {
-			templateIndex.ExecuteTemplate(w, "entry", uniqPages)
+			templateIndex.ExecuteTemplate(w, "entry", pages)
 		} else {
 			fs := http.FileServer(http.Dir("build"))
 			fs.ServeHTTP(w, r)
@@ -90,7 +78,7 @@ func main() {
 
 	paths = append(paths, "/plan")
 	mux.HandleFunc("/plan", func(w http.ResponseWriter, r *http.Request) {
-		templatePlan.ExecuteTemplate(w, "entry", uniqPages)
+		templatePlan.ExecuteTemplate(w, "entry", pages)
 	})
 
 	for i := range pages {
@@ -109,7 +97,7 @@ func main() {
 
 	log.Printf("Registered handlers for %d pages", len(pages))
 
-	if build {
+	if *flagBuild {
 		static.Build(static.DefaultOptions, mux, paths, func(e static.Event) {
 			if e.Error == nil {
 				return

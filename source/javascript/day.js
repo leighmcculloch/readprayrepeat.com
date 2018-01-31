@@ -11,7 +11,6 @@
   function init() {
     $textControlAudios = document.querySelectorAll('.text-controls-audio');
     $textControlVerses = document.querySelectorAll('.text-controls-verses');
-    $textControlBibles = document.querySelectorAll('.text-controls-bibles');
     $metaDay = document.querySelector('meta[name="readprayrepeat:day"]');
 
     if ('speechSynthesis' in window) {
@@ -94,16 +93,6 @@
         $text[i].className = $text[i].className.replace('show-verses', '');
       }
     }
-  }
-
-  function changeToSelectedBible($select) {
-    var $option = $select.options[$select.selectedIndex];
-
-    var bible = $option.getAttribute('data-bible');
-    window.setBible(bible);
-
-    var path = $option.getAttribute('data-path');
-    window.location.href = path;
   }
 
   function renderCurrentDate() {

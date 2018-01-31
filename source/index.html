@@ -10,13 +10,6 @@
 
 {{define "content"}}
   <script>
-    var bible = window.getBible();
-    var pageSuffix = '';
-    if (bible != null && bible != 'CEV') {
-      pageSuffix = '.' + bible.toLowerCase();
-    }
-  </script>
-  <script>
     var ONE_DAY_IN_SECONDS = 1000 * 60 * 60 * 24;
 
     var now = new Date();
@@ -32,7 +25,7 @@
   <div class="today">
     <script>
       if (today <= {{len .}}) {
-          document.write('<a href="' + today + pageSuffix + '">Read today, day ' + today + '<i class="icon-right-circled"></i></a>');
+          document.write('<a href="' + today + '">Read today, day ' + today + '<i class="icon-right-circled"></i></a>');
       }
     </script>
   </div>

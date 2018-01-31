@@ -38,13 +38,6 @@
       <a href="#reading">{{.Day.ReadingReference}}</a>
       &amp;
       <a href="#prayer">{{.Day.PrayerReference}}</a>
-      <select class="text-controls-bibles">
-        {{range .Bibles}}
-        <option data-bible="{{.NameShort}}" data-path="{{$.PathForBible .}}" {{if eq .NameShort $.Bible.NameShort}}selected{{end}}>
-        {{.NameShort}} &ndash; {{.NameCommon}}
-        </option>
-        {{end}}
-      </select>
     </div>
     <div class="time">~{{.Day.TimeToCompleteInMinutes}} mins</div>
   </div>
@@ -70,14 +63,6 @@
       </td>
       <td class="nav-item nav-controls">
         <a class="text-controls-verses">Verses</a>
-        &middot;
-        <select class="text-controls-bibles">
-          {{range .Bibles}}
-          <option data-bible="{{.NameShort}}" data-path="{{$.PathForBible .}}" {{if eq .NameShort $.Bible.NameShort}}selected{{end}}>
-            {{.NameShort}} &ndash; {{.NameCommon}}
-          </option>
-          {{end}}
-        </select>
       </td>
       <td class="nav-item nav-next">
         {{with .NextPage}}<a href="{{.Path}}">Day {{.Day.DayNumber}} <i class="icon-right-circled"></i></a>{{end}}

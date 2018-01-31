@@ -2,50 +2,13 @@
 
 {{define "title"}}Reading plan{{end}}
 
-{{define "head"}}
-  <script src="javascript/localstorage.js"></script>
-  <script src="javascript/bible.js"></script>
-{{end}}
-
-
 {{define "content"}}
   <script>
-    var bible = window.getBible();
-    var pageSuffix = '';
-    if (bible != null && bible != 'CEV') {
-      pageSuffix = '.' + bible.toLowerCase();
-    }
-
-    window.addEventListener('load', function() {
-      for(var i=0; i<document.links.length; i++) {
-        var $link = document.links[i];
-        var path = $link.getAttribute('data-path-' + bible.toLowerCase())
-        if (path) {
-          $link.setAttribute('href', path);
-        }
-      }
-    });
-  </script>
-  <script>
-    var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     var ONE_DAY_IN_SECONDS = 1000 * 60 * 60 * 24;
-
     var now = new Date();
     var start = new Date(now.getFullYear(), 0, 0);
     var diff = now - start;
     var today = Math.floor(diff / ONE_DAY_IN_SECONDS);
-
-    function getDateForDay(day) {
-      var daysInTime = ONE_DAY_IN_SECONDS * day;
-      return new Date(start.getTime() + daysInTime);
-    }
-
-    function getDateStringForDay(day) {
-      var date = getDateForDay(day);
-      var month = MONTHS[date.getMonth()];
-      var dayOfMonth = date.getDate();
-      return month + ' ' + dayOfMonth;
-    }
   </script>
 
   <div>
@@ -68,13 +31,9 @@
       <div>Pray</div>
     </div>
     {{range $page := .}}
-    <a class="day" href="{{$page.Day.DayNumber}}" {{range $bible := .Bibles}}data-path-{{$bible.NameShort}}="{{$page.PathForBible $bible}}" {{end}}>
+    <a class="day" href="{{$page.Day.DayNumber}}">
       <div class="number">{{$page.Day.DayNumber}}</div>
-      <div class="date">
-        <script>
-          document.write(getDateStringForDay({{$page.Day.DayNumber}}));
-        </script>
-      </div>
+      <div class="date">{{$page.Date.Format "Jan 2" }}</div>
       <div class="reading">{{$page.Day.ReadingReference}}</div>
       <div calss="prayer">{{$page.Day.PrayerReference}}</div>
     </a>
