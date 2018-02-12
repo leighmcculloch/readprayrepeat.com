@@ -1,0 +1,34 @@
+{{define "page"}}day{{end}}
+
+{{define "title"}}{{.Reference}}{{end}}
+
+{{define "copyright"}}
+  {{.BiblePassage.Copyright | UnsafeHTML}}
+{{end}}
+
+{{define "head"}}
+  <script src="javascript/day.js" async="async"></script>
+{{end}}
+
+{{define "tail"}}
+  {{.BiblePassage.TrackingCode | UnsafeHTML}}
+{{end}}
+
+{{define "content"}}
+  <div id="reading-0">
+    <h2>{{.Reference}}</h2>
+    <a class="text-controls-audio"></a>
+    <div class="text {{.Bible.Source}}">{{.BiblePassage.Html | UnsafeHTML}}</div>
+  </div>
+  <table class="nav">
+    <tr>
+      <td class="nav-item nav-previous">
+      </td>
+      <td class="nav-item nav-controls">
+        <a class="text-controls-verses">Verses</a>
+      </td>
+      <td class="nav-item nav-next">
+      </td>
+    </tr>
+  </table>
+{{end}}

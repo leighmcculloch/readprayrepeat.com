@@ -2,12 +2,14 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
 
 	"4d63.com/biblepassageapi"
+	"4d63.com/biblestats"
 	"github.com/leighmcculloch/static"
 )
 
@@ -33,6 +35,7 @@ var (
 	}
 	templateIndex = template.Must(template.New("index").Funcs(templateFuncs).ParseFiles("source/base.html", "source/index.html"))
 	templateDay   = template.Must(template.New("day").Funcs(templateFuncs).ParseFiles("source/base.html", "source/day.html"))
+	templateVerse = template.Must(template.New("verse").Funcs(templateFuncs).ParseFiles("source/base.html", "source/verse.html"))
 )
 
 func main() {
@@ -92,7 +95,52 @@ func main() {
 		})
 	}
 
-	log.Printf("Registered handlers for %d pages", len(pages))
+	log.Printf("Registered %d handlers for reading", len(paths))
+
+	for _, b := range biblestats.Books() {
+		for c := 1; c <= biblestats.ChapterCount(b); c++ {
+			page := pagePassage{
+				Reference: fmt.Sprintf("%s %d", b, c),
+				Bible:     bible,
+			}
+			path := page.Path()
+			fmt.Println(path)
+			paths = append(paths, path)
+			mux.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
+				err := page.LoadPassages()
+				if err != nil {
+					log.Fatal(err)
+				}
+				err = templateVerse.ExecuteTemplate(w, "entry", page)
+				if err != nil {
+					log.Fatal(err)
+				}
+			})
+
+			for v := 1; v <= biblestats.VerseCount(b, c); v++ {
+				page := pagePassage{
+					Reference: fmt.Sprintf("%s %d:%d", b, c, v),
+					Bible:     bible,
+				}
+				path := page.Path()
+				fmt.Println(path)
+				paths = append(paths, path)
+				mux.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
+					err := page.LoadPassages()
+					if err != nil {
+						log.Println(err)
+						return
+					}
+					err = templateVerse.ExecuteTemplate(w, "entry", page)
+					if err != nil {
+						log.Fatal(err)
+					}
+				})
+			}
+		}
+	}
+
+	log.Printf("Registered %d handlers in total", len(paths))
 
 	if *flagBuild {
 		static.Build(static.DefaultOptions, mux, paths, func(e static.Event) {

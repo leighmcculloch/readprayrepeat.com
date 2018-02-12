@@ -10,6 +10,7 @@ deploy: build push cdn
 
 clean:
 	rm -fR build
+	rm -fR build-assets
 	rm -f app
 
 build-go:
@@ -24,24 +25,24 @@ debug-go:
 	godebug run *.go
 
 sass:
-	mkdir -p build/stylesheets
-	sassc source/stylesheets/all.scss > build/stylesheets/all.css
+	mkdir -p build-assets/stylesheets
+	sassc source/stylesheets/all.scss > build-assets/stylesheets/all.css
 
 static:
-	mkdir -p build/font
-	mkdir -p build/javascript
-	cp source/favicon.png build/favicon.png
-	cp -r source/font/* build/font/
-	cp -r source/javascript/* build/javascript/
+	mkdir -p build-assets/font
+	mkdir -p build-assets/javascript
+	cp source/favicon.png build-assets/favicon.png
+	cp -r source/font/* build-assets/font/
+	cp -r source/javascript/* build-assets/javascript/
 
 push:
-	gsutil -q -m -h "Content-Type: text/html"               cp -Z -a public-read -r `find build             -type f | grep -v '\.'`                        gs://today.bible/ 
-	gsutil -q -m -h "Content-Type: text/html"               cp -Z -a public-read -r `find build             -type f | grep    '\.\(html\|net\|esv\|gnt\)'` gs://today.bible/ 
-	gsutil -q -m -h "Content-Type: text/css"                cp -Z -a public-read -r `find build/stylesheets -type f | grep    '\.css'`                     gs://today.bible/stylesheets/
-	gsutil -q -m -h "Content-Type: application/javascript"  cp -Z -a public-read -r `find build/javascript  -type f | grep    '\.js'`                      gs://today.bible/javascript/
-	gsutil -q -m -h "Content-Type:"                         cp -Z -a public-read -r `find build/font        -type f | grep    '\.\(svg\|eot\|png\)'`       gs://today.bible/font/
-	gsutil -q -m -h "Content-Type: application/x-font-woff" cp -Z -a public-read -r `find build/font        -type f | grep    '\.woff'`                    gs://today.bible/font/
-	gsutil -q -m -h "Content-Type: font/truetype"           cp -Z -a public-read -r `find build/font        -type f | grep    '\.ttf'`                     gs://today.bible/font/
+	cd build && \
+		gsutil -m -h "Content-Type: text/html" cp -a public-read -r . gs://today.bible/ 
+	gsutil -q -m -h "Content-Type: text/css"                cp -Z -a public-read -r `find build-assets/stylesheets -type f | grep    '\.css'`                     gs://today.bible/stylesheets/
+	gsutil -q -m -h "Content-Type: application/javascript"  cp -Z -a public-read -r `find build-assets/javascript  -type f | grep    '\.js'`                      gs://today.bible/javascript/
+	gsutil -q -m -h "Content-Type:"                         cp -Z -a public-read -r `find build-assets/font        -type f | grep    '\.\(svg\|eot\|png\)'`       gs://today.bible/font/
+	gsutil -q -m -h "Content-Type: application/x-font-woff" cp -Z -a public-read -r `find build-assets/font        -type f | grep    '\.woff'`                    gs://today.bible/font/
+	gsutil -q -m -h "Content-Type: font/truetype"           cp -Z -a public-read -r `find build-assets/font        -type f | grep    '\.ttf'`                     gs://today.bible/font/
 	gsutil web set -m index.html -e 404.html gs://today.bible
 
 cdn:

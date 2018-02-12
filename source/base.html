@@ -21,7 +21,7 @@
   <body class="page {{template "page" .}}">
     <div class="view">
       <div class="header">
-        <h1><a href="./"><i class="icon-book-open"></i>Read the Bible Today</a></h1>
+	{{template "header" .}}
       </div>
       <div class="content">
         {{template "content" .}}
@@ -29,7 +29,7 @@
       <div class="footer">
         <div class="copyright">{{template "copyright" .}}</div>
         <div class="about">
-          Created by <a href="https://leighmcculloch.com">Leigh McCulloch</a>. Videos by <a href="https://www.youtube.com/user/jointhebibleproject">The Bible Project</a>.
+          Created by <a href="https://leighmcculloch.com">Leigh McCulloch</a>.
         </div>
       </div>
     </div>
@@ -39,4 +39,5 @@
 {{end}}
 {{define "head"}}{{end}}
 {{define "tail"}}{{end}}
+{{define "header"}}{{end}}
 {{define "copyright"}}{{end}}

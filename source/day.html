@@ -3,7 +3,8 @@
 {{define "title"}}Day {{.Day.DayNumber}}{{end}}
 
 {{define "copyright"}}
-  {{range .Day.BiblePassages}}{{.Copyright | UnsafeHTML}}{{end}}
+{{with index .Day.BiblePassages 0}}{{.Copyright | UnsafeHTML}}{{end}}
+<p>Videos by <a href="https://www.youtube.com/user/jointhebibleproject">The Bible Project</a>.</p>
 {{end}}
 
 {{define "head"}}
