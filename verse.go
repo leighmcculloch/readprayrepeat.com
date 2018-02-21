@@ -10,6 +10,9 @@ import (
 type pagePassage struct {
 	Reference string
 
+	PreviousPage *pagePassage
+	NextPage     *pagePassage
+
 	Bible        biblepassageapi.Bible
 	BiblePassage *biblepassageapi.Passage
 }

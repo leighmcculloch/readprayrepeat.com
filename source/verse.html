@@ -15,19 +15,32 @@
 {{end}}
 
 {{define "content"}}
+  <table class="nav">
+    <tr>
+      <td class="nav-item nav-previous">
+        {{with .PreviousPage}}<a href="{{.Path}}"><i class="icon-left-circled"></i> {{.Reference}}</a>{{end}}
+      </td>
+      <td class="nav-item nav-current">
+        {{.Reference}}
+      </td>
+      <td class="nav-item nav-next">
+        {{with .NextPage}}<a href="{{.Path}}">{{.Reference}} <i class="icon-right-circled"></i></a>{{end}}
+      </td>
+    </tr>
+  </table>
   <div id="reading-0">
-    <h2>{{.Reference}}</h2>
-    <a class="text-controls-audio"></a>
-    <div class="text {{.Bible.Source}}">{{.BiblePassage.Html | UnsafeHTML}}</div>
+    <div class="text {{.Bible.Source}} show-verses">{{.BiblePassage.Html | UnsafeHTML}}</div>
   </div>
   <table class="nav">
     <tr>
       <td class="nav-item nav-previous">
+        {{with .PreviousPage}}<a href="{{.Path}}"><i class="icon-left-circled"></i> {{.Reference}}</a>{{end}}
       </td>
       <td class="nav-item nav-controls">
         <a class="text-controls-verses">Verses</a>
       </td>
       <td class="nav-item nav-next">
+        {{with .NextPage}}<a href="{{.Path}}">{{.Reference}} <i class="icon-right-circled"></i></a>{{end}}
       </td>
     </tr>
   </table>

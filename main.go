@@ -97,12 +97,20 @@ func main() {
 
 	log.Printf("Registered %d handlers for reading", len(paths))
 
+	var previousChapterPage *pagePassage
+	var previousVersePage *pagePassage
 	for _, b := range biblestats.Books() {
 		for c := 1; c <= biblestats.ChapterCount(b); c++ {
-			page := pagePassage{
-				Reference: fmt.Sprintf("%s %d", b, c),
-				Bible:     bible,
+			page := &pagePassage{
+				Reference:    fmt.Sprintf("%s %d", b, c),
+				PreviousPage: previousChapterPage,
+				Bible:        bible,
 			}
+			if previousChapterPage != nil {
+				previousChapterPage.NextPage = page
+			}
+			previousChapterPage = page
+
 			path := page.Path()
 			fmt.Println(path)
 			paths = append(paths, path)
@@ -118,10 +126,16 @@ func main() {
 			})
 
 			for v := 1; v <= biblestats.VerseCount(b, c); v++ {
-				page := pagePassage{
-					Reference: fmt.Sprintf("%s %d:%d", b, c, v),
-					Bible:     bible,
+				page := &pagePassage{
+					Reference:    fmt.Sprintf("%s %d:%d", b, c, v),
+					PreviousPage: previousVersePage,
+					Bible:        bible,
 				}
+				if previousVersePage != nil {
+					previousVersePage.NextPage = page
+				}
+				previousVersePage = page
+
 				path := page.Path()
 				fmt.Println(path)
 				paths = append(paths, path)
