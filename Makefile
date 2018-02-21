@@ -14,11 +14,11 @@ clean:
 	rm -f app
 
 build-go:
-	go build -o app
+	vgo build -o app
 	./app -build
 
 run-go:
-	go build -o app
+	vgo build -o app
 	./app
 
 debug-go:

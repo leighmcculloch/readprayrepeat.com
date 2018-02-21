@@ -20,10 +20,12 @@ The reading plan has good pace for even those new to the Bible. The accompanying
 
 ### Setup
 
+Requires `vgo` to be installed. See [research.swtch.com/vgo-tour](https://research.swtch.com/vgo-tour).
+
 Requires `sassc` to be installed.
 
 ```bash
-go get github.com/leighmcculloch/today.bible
+git clone git@github.com/leighmcculloch/today.bible
 make setup
 ```
 
