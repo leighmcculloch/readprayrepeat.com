@@ -102,9 +102,10 @@ func main() {
 	for _, b := range biblestats.Books() {
 		for c := 1; c <= biblestats.ChapterCount(b); c++ {
 			page := &pagePassage{
-				Reference:    fmt.Sprintf("%s %d", b, c),
-				PreviousPage: previousChapterPage,
-				Bible:        bible,
+				Reference:     fmt.Sprintf("%s %d", b, c),
+				AbbrReference: fmt.Sprintf("%s %d", b.Abbr(), c),
+				PreviousPage:  previousChapterPage,
+				Bible:         bible,
 			}
 			if previousChapterPage != nil {
 				previousChapterPage.NextPage = page
@@ -127,9 +128,10 @@ func main() {
 
 			for v := 1; v <= biblestats.VerseCount(b, c); v++ {
 				page := &pagePassage{
-					Reference:    fmt.Sprintf("%s %d:%d", b, c, v),
-					PreviousPage: previousVersePage,
-					Bible:        bible,
+					Reference:     fmt.Sprintf("%s %d:%d", b, c, v),
+					AbbrReference: fmt.Sprintf("%s %d:%d", b.Abbr(), c, v),
+					PreviousPage:  previousVersePage,
+					Bible:         bible,
 				}
 				if previousVersePage != nil {
 					previousVersePage.NextPage = page

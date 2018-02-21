@@ -8,7 +8,8 @@ import (
 )
 
 type pagePassage struct {
-	Reference string
+	Reference     string
+	AbbrReference string
 
 	PreviousPage *pagePassage
 	NextPage     *pagePassage
@@ -19,7 +20,7 @@ type pagePassage struct {
 
 func (p pagePassage) Path() string {
 	const chars = " :"
-	slug := strings.ToLower(p.Reference)
+	slug := strings.ToLower(p.AbbrReference)
 	for _, c := range chars {
 		slug = strings.Replace(slug, string(c), ".", -1)
 	}
