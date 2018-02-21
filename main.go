@@ -10,7 +10,7 @@ import (
 
 	"4d63.com/biblepassageapi"
 	"4d63.com/biblestats"
-	"github.com/leighmcculloch/static"
+	"4d63.com/static"
 )
 
 const (
