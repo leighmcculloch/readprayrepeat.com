@@ -128,30 +128,30 @@ a {
             padding: 2.5px 5px;
             font-size: 0.8em; } }
 
-.page.day .view .nav {
+.page.biblecontent .view .nav {
   font-size: 2em;
   margin: 20px 0;
   width: 100%; }
-  .page.day .view .nav .nav-item {
+  .page.biblecontent .view .nav .nav-item {
     font-weight: 600;
     color: #1b1b1b;
     width: 33.33%;
     text-align: center;
     vertical-align: middle; }
-  .page.day .view .nav .nav-previous,
-  .page.day .view .nav .nav-controls,
-  .page.day .view .nav .nav-next {
+  .page.biblecontent .view .nav .nav-previous,
+  .page.biblecontent .view .nav .nav-controls,
+  .page.biblecontent .view .nav .nav-next {
     font-size: 0.5em; }
-  .page.day .view .nav .nav-controls {
+  .page.biblecontent .view .nav .nav-controls {
     font-weight: normal;
     color: #a9a9a9;
     cursor: pointer; }
-    .page.day .view .nav .nav-controls a.text-controls-verses {
+    .page.biblecontent .view .nav .nav-controls a.text-controls-verses {
       cursor: pointer; }
-      .page.day .view .nav .nav-controls a.text-controls-verses:hover {
+      .page.biblecontent .view .nav .nav-controls a.text-controls-verses:hover {
         text-decoration: underline; }
 
-.page.day .view select.text-controls-bibles {
+.page.biblecontent .view select.text-controls-bibles {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -163,1558 +163,1558 @@ a {
   background: none;
   border: none;
   width: 35px; }
-  .page.day .view select.text-controls-bibles::-ms-expand {
+  .page.biblecontent .view select.text-controls-bibles::-ms-expand {
     display: none; }
 
-.page.day .view .nav-current-info {
+.page.biblecontent .view .nav-current-info {
   color: #a9a9a9; }
-  .page.day .view .nav-current-info .passages a:hover {
+  .page.biblecontent .view .nav-current-info .passages a:hover {
     text-decoration: underline; }
 
-.page.day .view .watch iframe {
+.page.biblecontent .view .watch iframe {
   margin: 20px 0 0 0;
   width: 580px;
   height: 326px; }
   @media (max-width: 580px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 580px;
       height: 326px; } }
   @media (max-width: 579px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 579px;
       height: 325.43793px; } }
   @media (max-width: 578px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 578px;
       height: 324.87586px; } }
   @media (max-width: 577px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 577px;
       height: 324.31379px; } }
   @media (max-width: 576px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 576px;
       height: 323.75172px; } }
   @media (max-width: 575px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 575px;
       height: 323.18966px; } }
   @media (max-width: 574px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 574px;
       height: 322.62759px; } }
   @media (max-width: 573px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 573px;
       height: 322.06552px; } }
   @media (max-width: 572px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 572px;
       height: 321.50345px; } }
   @media (max-width: 571px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 571px;
       height: 320.94138px; } }
   @media (max-width: 570px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 570px;
       height: 320.37931px; } }
   @media (max-width: 569px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 569px;
       height: 319.81724px; } }
   @media (max-width: 568px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 568px;
       height: 319.25517px; } }
   @media (max-width: 567px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 567px;
       height: 318.6931px; } }
   @media (max-width: 566px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 566px;
       height: 318.13103px; } }
   @media (max-width: 565px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 565px;
       height: 317.56897px; } }
   @media (max-width: 564px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 564px;
       height: 317.0069px; } }
   @media (max-width: 563px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 563px;
       height: 316.44483px; } }
   @media (max-width: 562px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 562px;
       height: 315.88276px; } }
   @media (max-width: 561px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 561px;
       height: 315.32069px; } }
   @media (max-width: 560px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 560px;
       height: 314.75862px; } }
   @media (max-width: 559px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 559px;
       height: 314.19655px; } }
   @media (max-width: 558px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 558px;
       height: 313.63448px; } }
   @media (max-width: 557px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 557px;
       height: 313.07241px; } }
   @media (max-width: 556px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 556px;
       height: 312.51034px; } }
   @media (max-width: 555px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 555px;
       height: 311.94828px; } }
   @media (max-width: 554px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 554px;
       height: 311.38621px; } }
   @media (max-width: 553px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 553px;
       height: 310.82414px; } }
   @media (max-width: 552px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 552px;
       height: 310.26207px; } }
   @media (max-width: 551px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 551px;
       height: 309.7px; } }
   @media (max-width: 550px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 550px;
       height: 309.13793px; } }
   @media (max-width: 549px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 549px;
       height: 308.57586px; } }
   @media (max-width: 548px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 548px;
       height: 308.01379px; } }
   @media (max-width: 547px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 547px;
       height: 307.45172px; } }
   @media (max-width: 546px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 546px;
       height: 306.88966px; } }
   @media (max-width: 545px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 545px;
       height: 306.32759px; } }
   @media (max-width: 544px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 544px;
       height: 305.76552px; } }
   @media (max-width: 543px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 543px;
       height: 305.20345px; } }
   @media (max-width: 542px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 542px;
       height: 304.64138px; } }
   @media (max-width: 541px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 541px;
       height: 304.07931px; } }
   @media (max-width: 540px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 540px;
       height: 303.51724px; } }
   @media (max-width: 539px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 539px;
       height: 302.95517px; } }
   @media (max-width: 538px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 538px;
       height: 302.3931px; } }
   @media (max-width: 537px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 537px;
       height: 301.83103px; } }
   @media (max-width: 536px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 536px;
       height: 301.26897px; } }
   @media (max-width: 535px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 535px;
       height: 300.7069px; } }
   @media (max-width: 534px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 534px;
       height: 300.14483px; } }
   @media (max-width: 533px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 533px;
       height: 299.58276px; } }
   @media (max-width: 532px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 532px;
       height: 299.02069px; } }
   @media (max-width: 531px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 531px;
       height: 298.45862px; } }
   @media (max-width: 530px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 530px;
       height: 297.89655px; } }
   @media (max-width: 529px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 529px;
       height: 297.33448px; } }
   @media (max-width: 528px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 528px;
       height: 296.77241px; } }
   @media (max-width: 527px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 527px;
       height: 296.21034px; } }
   @media (max-width: 526px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 526px;
       height: 295.64828px; } }
   @media (max-width: 525px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 525px;
       height: 295.08621px; } }
   @media (max-width: 524px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 524px;
       height: 294.52414px; } }
   @media (max-width: 523px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 523px;
       height: 293.96207px; } }
   @media (max-width: 522px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 522px;
       height: 293.4px; } }
   @media (max-width: 521px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 521px;
       height: 292.83793px; } }
   @media (max-width: 520px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 520px;
       height: 292.27586px; } }
   @media (max-width: 519px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 519px;
       height: 291.71379px; } }
   @media (max-width: 518px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 518px;
       height: 291.15172px; } }
   @media (max-width: 517px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 517px;
       height: 290.58966px; } }
   @media (max-width: 516px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 516px;
       height: 290.02759px; } }
   @media (max-width: 515px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 515px;
       height: 289.46552px; } }
   @media (max-width: 514px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 514px;
       height: 288.90345px; } }
   @media (max-width: 513px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 513px;
       height: 288.34138px; } }
   @media (max-width: 512px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 512px;
       height: 287.77931px; } }
   @media (max-width: 511px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 511px;
       height: 287.21724px; } }
   @media (max-width: 510px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 510px;
       height: 286.65517px; } }
   @media (max-width: 509px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 509px;
       height: 286.0931px; } }
   @media (max-width: 508px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 508px;
       height: 285.53103px; } }
   @media (max-width: 507px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 507px;
       height: 284.96897px; } }
   @media (max-width: 506px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 506px;
       height: 284.4069px; } }
   @media (max-width: 505px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 505px;
       height: 283.84483px; } }
   @media (max-width: 504px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 504px;
       height: 283.28276px; } }
   @media (max-width: 503px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 503px;
       height: 282.72069px; } }
   @media (max-width: 502px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 502px;
       height: 282.15862px; } }
   @media (max-width: 501px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 501px;
       height: 281.59655px; } }
   @media (max-width: 500px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 500px;
       height: 281.03448px; } }
   @media (max-width: 499px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 499px;
       height: 280.47241px; } }
   @media (max-width: 498px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 498px;
       height: 279.91034px; } }
   @media (max-width: 497px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 497px;
       height: 279.34828px; } }
   @media (max-width: 496px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 496px;
       height: 278.78621px; } }
   @media (max-width: 495px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 495px;
       height: 278.22414px; } }
   @media (max-width: 494px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 494px;
       height: 277.66207px; } }
   @media (max-width: 493px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 493px;
       height: 277.1px; } }
   @media (max-width: 492px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 492px;
       height: 276.53793px; } }
   @media (max-width: 491px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 491px;
       height: 275.97586px; } }
   @media (max-width: 490px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 490px;
       height: 275.41379px; } }
   @media (max-width: 489px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 489px;
       height: 274.85172px; } }
   @media (max-width: 488px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 488px;
       height: 274.28966px; } }
   @media (max-width: 487px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 487px;
       height: 273.72759px; } }
   @media (max-width: 486px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 486px;
       height: 273.16552px; } }
   @media (max-width: 485px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 485px;
       height: 272.60345px; } }
   @media (max-width: 484px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 484px;
       height: 272.04138px; } }
   @media (max-width: 483px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 483px;
       height: 271.47931px; } }
   @media (max-width: 482px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 482px;
       height: 270.91724px; } }
   @media (max-width: 481px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 481px;
       height: 270.35517px; } }
   @media (max-width: 480px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 480px;
       height: 269.7931px; } }
   @media (max-width: 479px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 479px;
       height: 269.23103px; } }
   @media (max-width: 478px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 478px;
       height: 268.66897px; } }
   @media (max-width: 477px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 477px;
       height: 268.1069px; } }
   @media (max-width: 476px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 476px;
       height: 267.54483px; } }
   @media (max-width: 475px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 475px;
       height: 266.98276px; } }
   @media (max-width: 474px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 474px;
       height: 266.42069px; } }
   @media (max-width: 473px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 473px;
       height: 265.85862px; } }
   @media (max-width: 472px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 472px;
       height: 265.29655px; } }
   @media (max-width: 471px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 471px;
       height: 264.73448px; } }
   @media (max-width: 470px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 470px;
       height: 264.17241px; } }
   @media (max-width: 469px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 469px;
       height: 263.61034px; } }
   @media (max-width: 468px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 468px;
       height: 263.04828px; } }
   @media (max-width: 467px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 467px;
       height: 262.48621px; } }
   @media (max-width: 466px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 466px;
       height: 261.92414px; } }
   @media (max-width: 465px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 465px;
       height: 261.36207px; } }
   @media (max-width: 464px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 464px;
       height: 260.8px; } }
   @media (max-width: 463px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 463px;
       height: 260.23793px; } }
   @media (max-width: 462px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 462px;
       height: 259.67586px; } }
   @media (max-width: 461px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 461px;
       height: 259.11379px; } }
   @media (max-width: 460px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 460px;
       height: 258.55172px; } }
   @media (max-width: 459px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 459px;
       height: 257.98966px; } }
   @media (max-width: 458px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 458px;
       height: 257.42759px; } }
   @media (max-width: 457px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 457px;
       height: 256.86552px; } }
   @media (max-width: 456px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 456px;
       height: 256.30345px; } }
   @media (max-width: 455px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 455px;
       height: 255.74138px; } }
   @media (max-width: 454px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 454px;
       height: 255.17931px; } }
   @media (max-width: 453px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 453px;
       height: 254.61724px; } }
   @media (max-width: 452px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 452px;
       height: 254.05517px; } }
   @media (max-width: 451px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 451px;
       height: 253.4931px; } }
   @media (max-width: 450px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 450px;
       height: 252.93103px; } }
   @media (max-width: 449px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 449px;
       height: 252.36897px; } }
   @media (max-width: 448px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 448px;
       height: 251.8069px; } }
   @media (max-width: 447px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 447px;
       height: 251.24483px; } }
   @media (max-width: 446px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 446px;
       height: 250.68276px; } }
   @media (max-width: 445px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 445px;
       height: 250.12069px; } }
   @media (max-width: 444px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 444px;
       height: 249.55862px; } }
   @media (max-width: 443px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 443px;
       height: 248.99655px; } }
   @media (max-width: 442px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 442px;
       height: 248.43448px; } }
   @media (max-width: 441px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 441px;
       height: 247.87241px; } }
   @media (max-width: 440px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 440px;
       height: 247.31034px; } }
   @media (max-width: 439px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 439px;
       height: 246.74828px; } }
   @media (max-width: 438px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 438px;
       height: 246.18621px; } }
   @media (max-width: 437px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 437px;
       height: 245.62414px; } }
   @media (max-width: 436px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 436px;
       height: 245.06207px; } }
   @media (max-width: 435px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 435px;
       height: 244.5px; } }
   @media (max-width: 434px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 434px;
       height: 243.93793px; } }
   @media (max-width: 433px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 433px;
       height: 243.37586px; } }
   @media (max-width: 432px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 432px;
       height: 242.81379px; } }
   @media (max-width: 431px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 431px;
       height: 242.25172px; } }
   @media (max-width: 430px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 430px;
       height: 241.68966px; } }
   @media (max-width: 429px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 429px;
       height: 241.12759px; } }
   @media (max-width: 428px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 428px;
       height: 240.56552px; } }
   @media (max-width: 427px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 427px;
       height: 240.00345px; } }
   @media (max-width: 426px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 426px;
       height: 239.44138px; } }
   @media (max-width: 425px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 425px;
       height: 238.87931px; } }
   @media (max-width: 424px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 424px;
       height: 238.31724px; } }
   @media (max-width: 423px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 423px;
       height: 237.75517px; } }
   @media (max-width: 422px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 422px;
       height: 237.1931px; } }
   @media (max-width: 421px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 421px;
       height: 236.63103px; } }
   @media (max-width: 420px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 420px;
       height: 236.06897px; } }
   @media (max-width: 419px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 419px;
       height: 235.5069px; } }
   @media (max-width: 418px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 418px;
       height: 234.94483px; } }
   @media (max-width: 417px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 417px;
       height: 234.38276px; } }
   @media (max-width: 416px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 416px;
       height: 233.82069px; } }
   @media (max-width: 415px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 415px;
       height: 233.25862px; } }
   @media (max-width: 414px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 414px;
       height: 232.69655px; } }
   @media (max-width: 413px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 413px;
       height: 232.13448px; } }
   @media (max-width: 412px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 412px;
       height: 231.57241px; } }
   @media (max-width: 411px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 411px;
       height: 231.01034px; } }
   @media (max-width: 410px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 410px;
       height: 230.44828px; } }
   @media (max-width: 409px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 409px;
       height: 229.88621px; } }
   @media (max-width: 408px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 408px;
       height: 229.32414px; } }
   @media (max-width: 407px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 407px;
       height: 228.76207px; } }
   @media (max-width: 406px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 406px;
       height: 228.2px; } }
   @media (max-width: 405px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 405px;
       height: 227.63793px; } }
   @media (max-width: 404px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 404px;
       height: 227.07586px; } }
   @media (max-width: 403px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 403px;
       height: 226.51379px; } }
   @media (max-width: 402px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 402px;
       height: 225.95172px; } }
   @media (max-width: 401px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 401px;
       height: 225.38966px; } }
   @media (max-width: 400px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 400px;
       height: 224.82759px; } }
   @media (max-width: 399px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 399px;
       height: 224.26552px; } }
   @media (max-width: 398px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 398px;
       height: 223.70345px; } }
   @media (max-width: 397px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 397px;
       height: 223.14138px; } }
   @media (max-width: 396px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 396px;
       height: 222.57931px; } }
   @media (max-width: 395px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 395px;
       height: 222.01724px; } }
   @media (max-width: 394px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 394px;
       height: 221.45517px; } }
   @media (max-width: 393px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 393px;
       height: 220.8931px; } }
   @media (max-width: 392px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 392px;
       height: 220.33103px; } }
   @media (max-width: 391px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 391px;
       height: 219.76897px; } }
   @media (max-width: 390px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 390px;
       height: 219.2069px; } }
   @media (max-width: 389px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 389px;
       height: 218.64483px; } }
   @media (max-width: 388px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 388px;
       height: 218.08276px; } }
   @media (max-width: 387px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 387px;
       height: 217.52069px; } }
   @media (max-width: 386px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 386px;
       height: 216.95862px; } }
   @media (max-width: 385px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 385px;
       height: 216.39655px; } }
   @media (max-width: 384px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 384px;
       height: 215.83448px; } }
   @media (max-width: 383px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 383px;
       height: 215.27241px; } }
   @media (max-width: 382px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 382px;
       height: 214.71034px; } }
   @media (max-width: 381px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 381px;
       height: 214.14828px; } }
   @media (max-width: 380px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 380px;
       height: 213.58621px; } }
   @media (max-width: 379px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 379px;
       height: 213.02414px; } }
   @media (max-width: 378px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 378px;
       height: 212.46207px; } }
   @media (max-width: 377px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 377px;
       height: 211.9px; } }
   @media (max-width: 376px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 376px;
       height: 211.33793px; } }
   @media (max-width: 375px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 375px;
       height: 210.77586px; } }
   @media (max-width: 374px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 374px;
       height: 210.21379px; } }
   @media (max-width: 373px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 373px;
       height: 209.65172px; } }
   @media (max-width: 372px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 372px;
       height: 209.08966px; } }
   @media (max-width: 371px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 371px;
       height: 208.52759px; } }
   @media (max-width: 370px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 370px;
       height: 207.96552px; } }
   @media (max-width: 369px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 369px;
       height: 207.40345px; } }
   @media (max-width: 368px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 368px;
       height: 206.84138px; } }
   @media (max-width: 367px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 367px;
       height: 206.27931px; } }
   @media (max-width: 366px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 366px;
       height: 205.71724px; } }
   @media (max-width: 365px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 365px;
       height: 205.15517px; } }
   @media (max-width: 364px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 364px;
       height: 204.5931px; } }
   @media (max-width: 363px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 363px;
       height: 204.03103px; } }
   @media (max-width: 362px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 362px;
       height: 203.46897px; } }
   @media (max-width: 361px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 361px;
       height: 202.9069px; } }
   @media (max-width: 360px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 360px;
       height: 202.34483px; } }
   @media (max-width: 359px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 359px;
       height: 201.78276px; } }
   @media (max-width: 358px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 358px;
       height: 201.22069px; } }
   @media (max-width: 357px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 357px;
       height: 200.65862px; } }
   @media (max-width: 356px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 356px;
       height: 200.09655px; } }
   @media (max-width: 355px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 355px;
       height: 199.53448px; } }
   @media (max-width: 354px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 354px;
       height: 198.97241px; } }
   @media (max-width: 353px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 353px;
       height: 198.41034px; } }
   @media (max-width: 352px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 352px;
       height: 197.84828px; } }
   @media (max-width: 351px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 351px;
       height: 197.28621px; } }
   @media (max-width: 350px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 350px;
       height: 196.72414px; } }
   @media (max-width: 349px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 349px;
       height: 196.16207px; } }
   @media (max-width: 348px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 348px;
       height: 195.6px; } }
   @media (max-width: 347px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 347px;
       height: 195.03793px; } }
   @media (max-width: 346px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 346px;
       height: 194.47586px; } }
   @media (max-width: 345px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 345px;
       height: 193.91379px; } }
   @media (max-width: 344px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 344px;
       height: 193.35172px; } }
   @media (max-width: 343px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 343px;
       height: 192.78966px; } }
   @media (max-width: 342px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 342px;
       height: 192.22759px; } }
   @media (max-width: 341px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 341px;
       height: 191.66552px; } }
   @media (max-width: 340px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 340px;
       height: 191.10345px; } }
   @media (max-width: 339px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 339px;
       height: 190.54138px; } }
   @media (max-width: 338px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 338px;
       height: 189.97931px; } }
   @media (max-width: 337px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 337px;
       height: 189.41724px; } }
   @media (max-width: 336px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 336px;
       height: 188.85517px; } }
   @media (max-width: 335px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 335px;
       height: 188.2931px; } }
   @media (max-width: 334px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 334px;
       height: 187.73103px; } }
   @media (max-width: 333px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 333px;
       height: 187.16897px; } }
   @media (max-width: 332px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 332px;
       height: 186.6069px; } }
   @media (max-width: 331px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 331px;
       height: 186.04483px; } }
   @media (max-width: 330px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 330px;
       height: 185.48276px; } }
   @media (max-width: 329px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 329px;
       height: 184.92069px; } }
   @media (max-width: 328px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 328px;
       height: 184.35862px; } }
   @media (max-width: 327px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 327px;
       height: 183.79655px; } }
   @media (max-width: 326px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 326px;
       height: 183.23448px; } }
   @media (max-width: 325px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 325px;
       height: 182.67241px; } }
   @media (max-width: 324px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 324px;
       height: 182.11034px; } }
   @media (max-width: 323px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 323px;
       height: 181.54828px; } }
   @media (max-width: 322px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 322px;
       height: 180.98621px; } }
   @media (max-width: 321px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 321px;
       height: 180.42414px; } }
   @media (max-width: 320px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 320px;
       height: 179.86207px; } }
   @media (max-width: 319px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 319px;
       height: 179.3px; } }
   @media (max-width: 318px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 318px;
       height: 178.73793px; } }
   @media (max-width: 317px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 317px;
       height: 178.17586px; } }
   @media (max-width: 316px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 316px;
       height: 177.61379px; } }
   @media (max-width: 315px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 315px;
       height: 177.05172px; } }
   @media (max-width: 314px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 314px;
       height: 176.48966px; } }
   @media (max-width: 313px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 313px;
       height: 175.92759px; } }
   @media (max-width: 312px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 312px;
       height: 175.36552px; } }
   @media (max-width: 311px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 311px;
       height: 174.80345px; } }
   @media (max-width: 310px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 310px;
       height: 174.24138px; } }
   @media (max-width: 309px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 309px;
       height: 173.67931px; } }
   @media (max-width: 308px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 308px;
       height: 173.11724px; } }
   @media (max-width: 307px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 307px;
       height: 172.55517px; } }
   @media (max-width: 306px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 306px;
       height: 171.9931px; } }
   @media (max-width: 305px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 305px;
       height: 171.43103px; } }
   @media (max-width: 304px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 304px;
       height: 170.86897px; } }
   @media (max-width: 303px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 303px;
       height: 170.3069px; } }
   @media (max-width: 302px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 302px;
       height: 169.74483px; } }
   @media (max-width: 301px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 301px;
       height: 169.18276px; } }
   @media (max-width: 300px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 300px;
       height: 168.62069px; } }
   @media (max-width: 299px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 299px;
       height: 168.05862px; } }
   @media (max-width: 298px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 298px;
       height: 167.49655px; } }
   @media (max-width: 297px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 297px;
       height: 166.93448px; } }
   @media (max-width: 296px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 296px;
       height: 166.37241px; } }
   @media (max-width: 295px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 295px;
       height: 165.81034px; } }
   @media (max-width: 294px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 294px;
       height: 165.24828px; } }
   @media (max-width: 293px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 293px;
       height: 164.68621px; } }
   @media (max-width: 292px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 292px;
       height: 164.12414px; } }
   @media (max-width: 291px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 291px;
       height: 163.56207px; } }
   @media (max-width: 290px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 290px;
       height: 163px; } }
   @media (max-width: 289px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 289px;
       height: 162.43793px; } }
   @media (max-width: 288px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 288px;
       height: 161.87586px; } }
   @media (max-width: 287px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 287px;
       height: 161.31379px; } }
   @media (max-width: 286px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 286px;
       height: 160.75172px; } }
   @media (max-width: 285px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 285px;
       height: 160.18966px; } }
   @media (max-width: 284px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 284px;
       height: 159.62759px; } }
   @media (max-width: 283px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 283px;
       height: 159.06552px; } }
   @media (max-width: 282px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 282px;
       height: 158.50345px; } }
   @media (max-width: 281px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 281px;
       height: 157.94138px; } }
   @media (max-width: 280px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 280px;
       height: 157.37931px; } }
   @media (max-width: 279px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 279px;
       height: 156.81724px; } }
   @media (max-width: 278px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 278px;
       height: 156.25517px; } }
   @media (max-width: 277px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 277px;
       height: 155.6931px; } }
   @media (max-width: 276px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 276px;
       height: 155.13103px; } }
   @media (max-width: 275px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 275px;
       height: 154.56897px; } }
   @media (max-width: 274px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 274px;
       height: 154.0069px; } }
   @media (max-width: 273px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 273px;
       height: 153.44483px; } }
   @media (max-width: 272px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 272px;
       height: 152.88276px; } }
   @media (max-width: 271px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 271px;
       height: 152.32069px; } }
   @media (max-width: 270px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 270px;
       height: 151.75862px; } }
   @media (max-width: 269px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 269px;
       height: 151.19655px; } }
   @media (max-width: 268px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 268px;
       height: 150.63448px; } }
   @media (max-width: 267px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 267px;
       height: 150.07241px; } }
   @media (max-width: 266px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 266px;
       height: 149.51034px; } }
   @media (max-width: 265px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 265px;
       height: 148.94828px; } }
   @media (max-width: 264px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 264px;
       height: 148.38621px; } }
   @media (max-width: 263px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 263px;
       height: 147.82414px; } }
   @media (max-width: 262px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 262px;
       height: 147.26207px; } }
   @media (max-width: 261px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 261px;
       height: 146.7px; } }
   @media (max-width: 260px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 260px;
       height: 146.13793px; } }
   @media (max-width: 259px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 259px;
       height: 145.57586px; } }
   @media (max-width: 258px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 258px;
       height: 145.01379px; } }
   @media (max-width: 257px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 257px;
       height: 144.45172px; } }
   @media (max-width: 256px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 256px;
       height: 143.88966px; } }
   @media (max-width: 255px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 255px;
       height: 143.32759px; } }
   @media (max-width: 254px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 254px;
       height: 142.76552px; } }
   @media (max-width: 253px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 253px;
       height: 142.20345px; } }
   @media (max-width: 252px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 252px;
       height: 141.64138px; } }
   @media (max-width: 251px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 251px;
       height: 141.07931px; } }
   @media (max-width: 250px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 250px;
       height: 140.51724px; } }
   @media (max-width: 249px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 249px;
       height: 139.95517px; } }
   @media (max-width: 248px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 248px;
       height: 139.3931px; } }
   @media (max-width: 247px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 247px;
       height: 138.83103px; } }
   @media (max-width: 246px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 246px;
       height: 138.26897px; } }
   @media (max-width: 245px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 245px;
       height: 137.7069px; } }
   @media (max-width: 244px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 244px;
       height: 137.14483px; } }
   @media (max-width: 243px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 243px;
       height: 136.58276px; } }
   @media (max-width: 242px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 242px;
       height: 136.02069px; } }
   @media (max-width: 241px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 241px;
       height: 135.45862px; } }
   @media (max-width: 240px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 240px;
       height: 134.89655px; } }
   @media (max-width: 239px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 239px;
       height: 134.33448px; } }
   @media (max-width: 238px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 238px;
       height: 133.77241px; } }
   @media (max-width: 237px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 237px;
       height: 133.21034px; } }
   @media (max-width: 236px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 236px;
       height: 132.64828px; } }
   @media (max-width: 235px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 235px;
       height: 132.08621px; } }
   @media (max-width: 234px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 234px;
       height: 131.52414px; } }
   @media (max-width: 233px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 233px;
       height: 130.96207px; } }
   @media (max-width: 232px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 232px;
       height: 130.4px; } }
   @media (max-width: 231px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 231px;
       height: 129.83793px; } }
   @media (max-width: 230px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 230px;
       height: 129.27586px; } }
   @media (max-width: 229px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 229px;
       height: 128.71379px; } }
   @media (max-width: 228px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 228px;
       height: 128.15172px; } }
   @media (max-width: 227px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 227px;
       height: 127.58966px; } }
   @media (max-width: 226px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 226px;
       height: 127.02759px; } }
   @media (max-width: 225px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 225px;
       height: 126.46552px; } }
   @media (max-width: 224px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 224px;
       height: 125.90345px; } }
   @media (max-width: 223px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 223px;
       height: 125.34138px; } }
   @media (max-width: 222px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 222px;
       height: 124.77931px; } }
   @media (max-width: 221px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 221px;
       height: 124.21724px; } }
   @media (max-width: 220px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 220px;
       height: 123.65517px; } }
   @media (max-width: 219px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 219px;
       height: 123.0931px; } }
   @media (max-width: 218px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 218px;
       height: 122.53103px; } }
   @media (max-width: 217px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 217px;
       height: 121.96897px; } }
   @media (max-width: 216px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 216px;
       height: 121.4069px; } }
   @media (max-width: 215px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 215px;
       height: 120.84483px; } }
   @media (max-width: 214px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 214px;
       height: 120.28276px; } }
   @media (max-width: 213px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 213px;
       height: 119.72069px; } }
   @media (max-width: 212px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 212px;
       height: 119.15862px; } }
   @media (max-width: 211px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 211px;
       height: 118.59655px; } }
   @media (max-width: 210px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 210px;
       height: 118.03448px; } }
   @media (max-width: 209px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 209px;
       height: 117.47241px; } }
   @media (max-width: 208px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 208px;
       height: 116.91034px; } }
   @media (max-width: 207px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 207px;
       height: 116.34828px; } }
   @media (max-width: 206px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 206px;
       height: 115.78621px; } }
   @media (max-width: 205px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 205px;
       height: 115.22414px; } }
   @media (max-width: 204px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 204px;
       height: 114.66207px; } }
   @media (max-width: 203px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 203px;
       height: 114.1px; } }
   @media (max-width: 202px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 202px;
       height: 113.53793px; } }
   @media (max-width: 201px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 201px;
       height: 112.97586px; } }
   @media (max-width: 200px) {
-    .page.day .view .watch iframe {
+    .page.biblecontent .view .watch iframe {
       width: 200px;
       height: 112.41379px; } }
 
-.page.day .view h2 {
+.page.biblecontent .view h2 {
   margin: 40px 0 20px 0;
   font-size: 1.5em;
   font-weight: 600;
   color: #1b1b1b; }
 
-.page.day .view .text-controls-audio {
+.page.biblecontent .view .text-controls-audio {
   display: none;
   cursor: pointer; }
 
-.page.day .view .time {
+.page.biblecontent .view .time {
   font-size: 1em;
   color: #a9a9a9; }
 
-.page.day .view .text {
+.page.biblecontent .view .text {
   margin: 20px;
   font-size: 1.2em;
   line-height: 1.75em;
@@ -1723,48 +1723,51 @@ a {
   text-align: justify;
   /* source: biblesorg */
   /* source: esvapi */ }
-  .page.day .view .text.biblesorg p.p {
+  .page.biblecontent .view .text.biblesorg p.p {
     margin: 1.25em 0; }
-  .page.day .view .text.biblesorg p.pi {
+  .page.biblecontent .view .text.biblesorg p.pi {
     margin: 1.25em 1em; }
-  .page.day .view .text.biblesorg p.q, .page.day .view .text.biblesorg p.q1 {
+  .page.biblecontent .view .text.biblesorg p.q, .page.biblecontent .view .text.biblesorg p.q1 {
     text-indent: 1em; }
-  .page.day .view .text.biblesorg p.q2, .page.day .view .text.biblesorg p.q3 {
+  .page.biblecontent .view .text.biblesorg p.q2, .page.biblecontent .view .text.biblesorg p.q3 {
     text-indent: 2em; }
-  .page.day .view .text.biblesorg .d, .page.day .view .text.biblesorg .s, .page.day .view .text.biblesorg .s1, .page.day .view .text.biblesorg .s2, .page.day .view .text.biblesorg .v, .page.day .view .text.biblesorg .r, .page.day .view .text.biblesorg .mr, .page.day .view .text.biblesorg .ms1 {
+  .page.biblecontent .view .text.biblesorg .d, .page.biblecontent .view .text.biblesorg .s, .page.biblecontent .view .text.biblesorg .s1, .page.biblecontent .view .text.biblesorg .s2, .page.biblecontent .view .text.biblesorg .v, .page.biblecontent .view .text.biblesorg .r, .page.biblecontent .view .text.biblesorg .mr, .page.biblecontent .view .text.biblesorg .ms1 {
     display: none; }
-  .page.day .view .text.biblesorg.show-verses .v {
+  .page.biblecontent .view .text.biblesorg.show-verses .v {
     display: inline;
     font-weight: 300;
     font-size: smaller;
     color: #a9a9a9; }
-  .page.day .view .text.esvapi h2 {
+  .page.biblecontent .view .text.esvapi h2 {
     display: none; }
-  .page.day .view .text.esvapi p {
+  .page.biblecontent .view .text.esvapi p {
     margin: 2em 0; }
-  .page.day .view .text.esvapi .chapter-num, .page.day .view .text.esvapi .verse-num {
+  .page.biblecontent .view .text.esvapi .chapter-num, .page.biblecontent .view .text.esvapi .verse-num {
     display: none; }
-  .page.day .view .text.esvapi .block-indent {
+  .page.biblecontent .view .text.esvapi .block-indent {
     margin: 0 2em; }
-  .page.day .view .text.esvapi.show-verses .chapter-num, .page.day .view .text.esvapi.show-verses .verse-num {
+  .page.biblecontent .view .text.esvapi.show-verses .chapter-num, .page.biblecontent .view .text.esvapi.show-verses .verse-num {
     display: inline;
     font-weight: 300;
     font-size: smaller;
     color: #a9a9a9; }
-  .page.day .view .text.netbibleapi h3, .page.day .view .text.netbibleapi .vref, .page.day .view .text.netbibleapi p.psasuper {
+  .page.biblecontent .view .text.netbibleapi h3, .page.biblecontent .view .text.netbibleapi .vref, .page.biblecontent .view .text.netbibleapi p.psasuper {
     display: none; }
-  .page.day .view .text.netbibleapi p {
+  .page.biblecontent .view .text.netbibleapi p {
     margin: 2em 0; }
-    .page.day .view .text.netbibleapi p.poetry {
+    .page.biblecontent .view .text.netbibleapi p.poetry {
       margin: 0;
       text-indent: 1em; }
-  .page.day .view .text.netbibleapi i {
+  .page.biblecontent .view .text.netbibleapi i {
     font-style: italic; }
-  .page.day .view .text.netbibleapi.show-verses .vref {
+  .page.biblecontent .view .text.netbibleapi.show-verses .vref {
     display: inline;
     font-weight: 300;
     font-size: smaller;
     color: #a9a9a9; }
+
+.page.passage .view #reading-0 {
+  margin-top: 40px; }
 
 @font-face {
   font-family: 'icons';

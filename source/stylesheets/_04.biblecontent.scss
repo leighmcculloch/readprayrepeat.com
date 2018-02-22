@@ -1,4 +1,4 @@
-.page.day .view {
+.page.biblecontent .view {
   .nav {
     font-size: 2em;
     margin: $margin-standard 0;
@@ -173,6 +173,12 @@
         }
       }
     }
+  }
+}
+
+.page.passage .view {
+  #reading-0 {
+    margin-top: 40px;
   }
 }
 
