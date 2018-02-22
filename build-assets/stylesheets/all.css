@@ -141,15 +141,19 @@ a {
   .page.biblecontent .view .nav .nav-previous,
   .page.biblecontent .view .nav .nav-controls,
   .page.biblecontent .view .nav .nav-next {
-    font-size: 0.5em; }
+    font-size: 0.5em;
+    color: #a9a9a9; }
+  .page.biblecontent .view .nav .nav-previous a:hover,
+  .page.biblecontent .view .nav .nav-next a:hover {
+    color: #1b1b1b; }
   .page.biblecontent .view .nav .nav-controls {
     font-weight: normal;
-    color: #a9a9a9;
     cursor: pointer; }
     .page.biblecontent .view .nav .nav-controls a.text-controls-verses {
       cursor: pointer; }
       .page.biblecontent .view .nav .nav-controls a.text-controls-verses:hover {
-        text-decoration: underline; }
+        text-decoration: underline;
+        color: #1b1b1b; }
 
 .page.biblecontent .view select.text-controls-bibles {
   -webkit-appearance: none;

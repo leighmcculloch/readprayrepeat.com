@@ -14,16 +14,23 @@
     .nav-controls,
     .nav-next {
       font-size: 0.5em;
+      color: $color-unimportant;
+    }
+    .nav-previous,
+    .nav-next {
+      a:hover {
+        color: $color-text;
+      }
     }
     .nav-controls {
       font-weight: normal;
-      color: $color-unimportant;
       cursor: pointer;
 
       a.text-controls-verses {
         cursor: pointer;
         &:hover {
           text-decoration: underline;
+          color: $color-text;
         }
       }
     }
