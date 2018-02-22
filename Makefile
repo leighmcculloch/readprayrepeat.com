@@ -40,6 +40,7 @@ push:
 		gsutil -m -h "Content-Type: text/html" cp -a public-read -r . gs://today.bible/ 
 	gsutil -q -m -h "Content-Type: text/css"                cp -Z -a public-read -r `find build-assets/stylesheets -type f | grep    '\.css'`                     gs://today.bible/stylesheets/
 	gsutil -q -m -h "Content-Type: application/javascript"  cp -Z -a public-read -r `find build-assets/javascript  -type f | grep    '\.js'`                      gs://today.bible/javascript/
+	gsutil -q -m -h "Content-Type:"                         cp -Z -a public-read -r `find build-assets/favicon.png -type f `                                      gs://today.bible/
 	gsutil -q -m -h "Content-Type:"                         cp -Z -a public-read -r `find build-assets/font        -type f | grep    '\.\(svg\|eot\|png\)'`       gs://today.bible/font/
 	gsutil -q -m -h "Content-Type: application/x-font-woff" cp -Z -a public-read -r `find build-assets/font        -type f | grep    '\.woff'`                    gs://today.bible/font/
 	gsutil -q -m -h "Content-Type: font/truetype"           cp -Z -a public-read -r `find build-assets/font        -type f | grep    '\.ttf'`                     gs://today.bible/font/
