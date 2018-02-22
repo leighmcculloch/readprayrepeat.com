@@ -98,7 +98,7 @@ func main() {
 	log.Printf("Registered %d handlers for reading", len(paths))
 
 	var previousChapterPage *pagePassage
-	var previousVersePage *pagePassage
+	// var previousVersePage *pagePassage
 	for _, b := range biblestats.Books() {
 		for c := 1; c <= biblestats.ChapterCount(b); c++ {
 			page := &pagePassage{
@@ -126,33 +126,33 @@ func main() {
 				}
 			})
 
-			for v := 1; v <= biblestats.VerseCount(b, c); v++ {
-				page := &pagePassage{
-					Reference:     fmt.Sprintf("%s %d:%d", b, c, v),
-					AbbrReference: fmt.Sprintf("%s %d:%d", b.Abbr(), c, v),
-					PreviousPage:  previousVersePage,
-					Bible:         bible,
-				}
-				if previousVersePage != nil {
-					previousVersePage.NextPage = page
-				}
-				previousVersePage = page
+			// for v := 1; v <= biblestats.VerseCount(b, c); v++ {
+			// 	page := &pagePassage{
+			// 		Reference:     fmt.Sprintf("%s %d:%d", b, c, v),
+			// 		AbbrReference: fmt.Sprintf("%s %d:%d", b.Abbr(), c, v),
+			// 		PreviousPage:  previousVersePage,
+			// 		Bible:         bible,
+			// 	}
+			// 	if previousVersePage != nil {
+			// 		previousVersePage.NextPage = page
+			// 	}
+			// 	previousVersePage = page
 
-				path := page.Path()
-				fmt.Println(path)
-				paths = append(paths, path)
-				mux.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
-					err := page.LoadPassages()
-					if err != nil {
-						log.Println(err)
-						return
-					}
-					err = templateVerse.ExecuteTemplate(w, "entry", page)
-					if err != nil {
-						log.Fatal(err)
-					}
-				})
-			}
+			// 	path := page.Path()
+			// 	fmt.Println(path)
+			// 	paths = append(paths, path)
+			// 	mux.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
+			// 		err := page.LoadPassages()
+			// 		if err != nil {
+			// 			log.Println(err)
+			// 			return
+			// 		}
+			// 		err = templateVerse.ExecuteTemplate(w, "entry", page)
+			// 		if err != nil {
+			// 			log.Fatal(err)
+			// 		}
+			// 	})
+			// }
 		}
 	}
 
