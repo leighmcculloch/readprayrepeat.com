@@ -73,7 +73,7 @@ func main() {
 		if r.URL.Path == "/" {
 			templateIndex.ExecuteTemplate(w, "entry", pages)
 		} else {
-			fs := http.FileServer(http.Dir("build-assets"))
+			fs := http.FileServer(http.Dir("build"))
 			fs.ServeHTTP(w, r)
 		}
 	})
