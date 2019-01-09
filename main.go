@@ -44,7 +44,7 @@ func main() {
 
 	days := getDays()
 	bible := biblepassageapi.Cache(
-		biblepassageapi.NewBiblesOrg(biblesOrgAPIKey, biblepassageapi.MSG),
+		biblepassageapi.NewBiblesOrg(biblesOrgAPIKey, biblepassageapi.CEV),
 		cachePath,
 	)
 
