@@ -82,6 +82,9 @@ func main() {
 		page := pages[i]
 
 		path := page.Path()
+		if *flagBuild {
+			path += ".html"
+		}
 		paths = append(paths, path)
 		mux.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
 			err := page.LoadPassages()
@@ -113,6 +116,9 @@ func main() {
 			previousChapterPage = page
 
 			path := page.Path()
+			if *flagBuild {
+				path += ".html"
+			}
 			fmt.Println(path)
 			paths = append(paths, path)
 			mux.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
