@@ -23,3 +23,7 @@ build-static:
 	cp source/favicon.png build/favicon.png
 	cp -r source/font/* build/font/
 	cp -r source/javascript/* build/javascript/
+
+push:
+	firebase login --no-localhost
+	firebase deploy

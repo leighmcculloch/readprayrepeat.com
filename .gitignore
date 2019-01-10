@@ -4,3 +4,4 @@ cache
 app
 build-tools
 .idea
+.firebase/
