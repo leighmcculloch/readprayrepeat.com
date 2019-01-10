@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/cloud-builders/go'
+  args: ['run', '.', '-build']
+  env: ['GO111MODULE=on']
+  secretEnv: ['API_KEY_BIBLESORG']
+- name: 'gcr.io/$PROJECT_ID/make'
+  args: ['build-dirs', 'build-static']
+- name: 'gcr.io/$PROJECT_ID/sassc'
+  args: ['source/stylesheets/all.scss', 'build/stylesheets/all.css']
+- name: 'gcr.io/$PROJECT_ID/firebase'
+  args: ['deploy']
+secrets:
+- kmsKeyName: 'projects/build-227521/locations/global/keyRings/secrets/cryptoKeys/secrets'
+  secretEnv:
+    API_KEY_BIBLESORG: 'CiQA3d7b/ZaKWXFf24ZOgc7+TpSYU0Wn1udWeuJX4Y11tTkgMToSUQCUBEwVDpU52R2z/3RHlhPx73+WeiTDCjDGFhZsbAoc7DSqm30jeV4gANj9d3Rv1cjqKG3pl+CKU4PRbNLy1oYt/QNJk7AFFuNAszHOoSQvog=='
